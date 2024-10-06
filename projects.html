@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nahshon Mokua Obiri - Projects</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -14,80 +15,122 @@
             <div class="name">Nahshon Mokua Obiri</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="presentations.html">Presentations</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="teaching.html">Teaching</a></li>
                 <li><a href="cv.pdf" download>Download CV</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main>       
+        <div class="profile-container">
+            <img src="assets/nash.jpg" alt="Nahshon Mokua Obiri" class="profile-photo">
+            <div class="profile-info">
+                <h1>Nahshon Mokua Obiri</h1>
+                <p>PhD student in AI and Data Science</p>
+                <p>University of Siegen, Germany</p>
+                <div class="social-links">
+                    <div class="social-item" >
+                        <a href="mailto:nash2023ge@gmail.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="ResearchGate"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i> YouTube</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="ORCID"><i class="fab fa-orcid"></i> ORCID</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <h1>Projects</h1>
-        <style>
-            .project-container {
-                display: flex;
-                flex-direction: column;
-            }
-            .project {
-                background-color: #f9f9f9;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-                padding: 20px;
-                width: 100%;
-                transition: transform 0.3s ease;
-            }
-            .project:hover {
-                transform: translateY(-5px);
-            }
-            .project h2 {
-                color: #2c3e50;
-                font-size: 1.4em;
-                margin-bottom: 10px;
-            }
-            .project p {
-                color: #34495e;
-                margin-bottom: 8px;
-            }
-            .project ul {
-                list-style-type: none;
-                padding-left: 0;
-            }
-            .project li {
-                margin-bottom: 8px;
-            }
-            .project a {
-                color: #3498db;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-            .project a:hover {
-                color: #2980b9;
-            }
-        </style>
         <div class="project-container">
             <section class="project">
-                <h2>A Water Quality Monitoring System using Wireless Sensor Networks</h2>
-                <p><strong>Date:</strong> 03/01/2020 – 10/05/2021</p>
-                <p><strong>Description:</strong> Development of a wireless sensor network for monitoring water quality parameters in real-time.</p>
+                <div class="project-content">
+                    <img src="assets/pub_1.png" alt="Publication thumbnail" style="width: 100px; height: 100px; float: left; margin-right: 20px;">
+                    <div class="project-details">
+                        <h2>A Water Quality Monitoring System using Wireless Sensor Networks</h2>
+                        <p><strong>Date:</strong> 03/01/2020 – 10/05/2021</p>
+                        <p><strong>Description:</strong> Development of a wireless sensor network for monitoring water quality parameters in real-time.</p>
+                    </div>
+                </div>
             </section>
-
             <section class="project">
-                <h2>Text Message Based Electrical Devices Monitoring and Control System Using GSM Technology</h2>
-                <p><strong>Date:</strong> 05/01/2016 – 18/08/2016</p>
-                <p><strong>Description:</strong> System Development. Undergraduate studies requirement.</p>
-                <p><strong>Key Features:</strong> Remote monitoring and control of electrical devices using SMS commands via GSM technology.</p>
-            </section>
+                <div class="project-content">
+                    <img src="assets/pub2.png" alt="Publication thumbnail" style="width: 100px; height: 100px; float: left; margin-right: 20px;">
+                    <div class="project-details">
+                        <h2>Text Message Based Electrical Devices Monitoring and Control System Using GSM Technology</h2>
+                        <p><strong>Date:</strong> 05/01/2016 – 18/08/2016</p>
+                        <p><strong>Description:</strong> System Development. Undergraduate studies requirement.</p>
+                        <p><strong>Key Features:</strong> Remote monitoring and control of electrical devices using SMS commands via GSM technology.</p>
+                    </div>
+                </div>
+            </section>  
         </div>
     </main>
 
     <footer>
-        <p>Sitemap</p>
-        <p>FOLLOW: GITHUB RSS FEED</p>
+        <p>FOLLOW: <a href="https://github.com" target="_blank" style="color: #3498db;">GITHUB</a> RSS FEED</p>
         <p>&copy; 2024 Nahshon Mokua Obiri. All rights reserved.</p>
     </footer>
 
+     
+    <style> 
+        .project-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .project {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        .project h2 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .project p {
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+        .project ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .project li {
+            margin-bottom: 8px;
+        }
+        .project a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .project a:hover {
+            color: #2980b9;
+        }
+    </style>
     <script src="script.js"></script>
 </body>
 

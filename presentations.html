@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nahshon Mokua Obiri - Talks</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -14,65 +15,49 @@
             <div class="name">Nahshon Mokua Obiri</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="presentations.html" class="active">Presentations</a></li>
-                <li><a href="projects.html">Projects</a></li>
                 <li><a href="teaching.html">Teaching</a></li>
                 <li><a href="cv.pdf" download>Download CV</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main> 
+        <div class="profile-container">
+            <img src="assets/nash.jpg" alt="Nahshon Mokua Obiri" class="profile-photo">
+            <div class="profile-info">
+                <h1>Nahshon Mokua Obiri</h1>
+                <p>PhD student in AI and Data Science</p>
+                <p>University of Siegen, Germany</p>
+                <div class="social-links">
+                    <div class="social-item" >
+                        <a href="mailto:nash2023ge@gmail.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="ResearchGate"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i> YouTube</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                    </div>
+                    <div class="social-item" style="margin-left: 10px;">
+                        <a href="#" title="ORCID"><i class="fab fa-orcid"></i> ORCID</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <h1>Presentations</h1>
-        <style>
-            .presentation-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-            .presentation {
-                background-color: #f9f9f9;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-                padding: 20px;
-                width: calc(50% - 10px);
-                transition: transform 0.3s ease;
-            }
-            .presentation:hover {
-                transform: translateY(-5px);
-            }
-            .presentation h2 {
-                color: #2c3e50;
-                font-size: 1.4em;
-                margin-bottom: 10px;
-            }
-            .presentation p {
-                color: #34495e;
-                margin-bottom: 8px;
-            }
-            .presentation ul {
-                list-style-type: none;
-                padding-left: 0;
-            }
-            .presentation li {
-                margin-bottom: 8px;
-            }
-            .presentation a {
-                color: #3498db;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-            .presentation a:hover {
-                color: #2980b9;
-            }
-            @media (max-width: 768px) {
-                .presentation {
-                    width: 100%;
-                }
-            }
-        </style>
         <div class="presentation-container">
+           
             <section class="presentation">
                 <h2>Center for Sensor Systems PhD Forum</h2>
                 <p><strong>Date:</strong> 22/05/2025</p>
@@ -106,11 +91,58 @@
     </main>
 
     <footer>
-        <p>Sitemap</p>
-        <p>FOLLOW: GITHUB RSS FEED</p>
+        <p>FOLLOW: <a href="https://github.com" target="_blank" style="color: #3498db;">GITHUB</a> RSS FEED</p>
         <p>&copy; 2024 Nahshon Mokua Obiri. All rights reserved.</p>
     </footer>
-
+  
+    <style>
+        .presentation-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .presentation {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+        .presentation:hover {
+            transform: translateY(-5px);
+        }
+        .presentation h2 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .presentation p {
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+        .presentation ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .presentation li {
+            margin-bottom: 8px;
+        }
+        .presentation a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .presentation a:hover {
+            color: #2980b9;
+        }
+        @media (max-width: 768px) {
+            .presentation {
+                width: 100%;
+            }
+        }
+    </style>
     <script src="script.js"></script>
 </body>
 
