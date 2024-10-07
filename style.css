@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,18 +6,18 @@
     font-family: Arial, sans-serif;
 }
 
-/* Style for the body */
+/* Base Styles for Body */
 body {
     line-height: 1.6;
     color: #333;
     background-color: #f0f0f0;
-    padding-top: 80px; /* Add padding to account for the fixed header */
+    padding-top: 80px;  /* Account for fixed header height */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Header and Navigation */
+/* Header and Navigation Styles */
 header {
     background-color: #fff;
     padding: 20px 0;
@@ -66,12 +66,6 @@ nav ul li a:hover {
     background-color: #f0f0f0;
 }
 
-nav ul li a.active {
-    background-color: #FF4500;
-    color: #fff;
-}
-
-/* Ensure active state remains visible when scrolling */
 nav ul li a.active,
 nav ul li a.active:hover,
 nav ul li a.active:focus,
@@ -80,18 +74,28 @@ nav ul li a.active:active {
     color: #fff;
 }
 
-main {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    flex: 1;
+/* Section Container Style for Uniform Look */
+.section-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Consistent margin for left, right, top, and bottom */
+    padding: 20px;
+    max-width: 900px; /* Ensures all sections have the same width */
+    box-sizing: border-box;
 }
 
+/* Profile Container */
 .profile-container {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 40px;
     flex-wrap: wrap;
+    background-color: #f9f9f9; /* Added to match all section styles */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Matches margin of other sections */
+    padding: 20px;
+    max-width: 900px;
 }
 
 .profile-photo {
@@ -121,33 +125,20 @@ main {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .social-links a {
-    display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
     color: #0066cc;
+    font-size: 1em;
+    transition: color 0.3s ease;
 }
 
-.about-me, .news {
-    margin-bottom: 40px;
+.social-links a:hover {
+    color: #003366;
 }
 
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.news ul {
-    list-style-type: none;
-}
-
-.news ul li {
-    margin-bottom: 10px;
-}
-
+/* Footer Styles */
 footer {
     background-color: #333;
     color: #fff;
@@ -160,6 +151,16 @@ footer p {
     margin-bottom: 10px;
 }
 
+.footer-link {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #2980b9;
+}
+
+/* Responsive Design Adjustments */
 @media (max-width: 1024px) {
     .profile-container {
         flex-direction: column;
@@ -181,7 +182,7 @@ footer p {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 120px; /* Increase padding for smaller screens */
+        padding-top: 120px; /* Adjust padding for smaller screens */
     }
 
     nav {
