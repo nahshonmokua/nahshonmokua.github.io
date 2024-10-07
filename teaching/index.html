@@ -8,54 +8,6 @@
     <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style> 
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-
-        .teaching-section {
-            margin-bottom: 40px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .course-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .course-list li {
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .institution {
-            font-weight: bold;
-            color: #3498db;
-        }
-
-        .date {
-            font-style: italic;
-            color: #7f8c8d;
-        }
-
-        .responsibilities {
-            margin-top: 10px;
-        }
-
-        .responsibilities h3 {
-            margin-bottom: 5px;
-        }
-
-        .responsibilities ul {
-            padding-left: 20px;
-        }
-    </style>
 </head>
 
 <body>
@@ -68,87 +20,79 @@
                 <li><a href="../publications/">Publications</a></li>
                 <li><a href="../presentations/">Presentations</a></li>
                 <li><a href="../teaching/">Teaching</a></li>
-                <li><a href="../c_v/">CV</a></li>
+                <li><a href="../cv/">CV</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="profile-container">
+        <!-- Profile Section -->
+        <div class="profile-container styled-section">
             <img src="../assets/nash.jpg" alt="Nahshon Mokua Obiri" class="profile-photo">
             <div class="profile-info">
                 <h1>Nahshon Mokua Obiri</h1>
                 <p>PhD student in AI and Data Science</p>
                 <p>University of Siegen, Germany</p>
                 <div class="social-links">
-                    <div class="social-item">
-                        <a href="mailto:nash2023ge@gmail.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
-                    </div>
-                    <div class="social-item" style="margin-left: 10px;">
-                        <a href="#" title="ResearchGate"><i class="fab fa-researchgate"></i> ResearchGate</a>
-                    </div>
-                    <div class="social-item" style="margin-left: 10px;">
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    </div>
-                    <div class="social-item" style="margin-left: 10px;">
-                        <a href="#" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                    <div class="social-item" style="margin-left: 10px;">
-                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i> YouTube</a>
-                    </div>
-                    <div class="social-item" style="margin-left: 10px;">
-                        <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                    </div>
-                    <div class="social-item" style="margin-left: 10px;">
-                        <a href="#" title="ORCID"><i class="fab fa-orcid"></i> ORCID</a>
-                    </div>
+                    <a href="mailto:nash2023ge@gmail.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="#" title="ResearchGate"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/nahshonmokua" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                    <a href="#" title="ORCID"><i class="fab fa-orcid"></i> ORCID</a>
                 </div>
             </div>
         </div>
 
-        <h1>Teaching Experience</h1>
+        <!-- Teaching Experience Section -->
+        <section class="styled-section">
+            <h1>Teaching Experience</h1>
 
-        <section class="teaching-section">
-            <h2><span class="institution"><a href="https://www.dkut.ac.ke" target="_blank">Dedan Kimathi University of Technology</a></span></h2>
-            <h3>Position: Assistant Lecturer</h3>
-            <div class="responsibilities"> 
-                <h3>Courses Taught:</h3>
-                <ul class="course-list">
-                    <li>Circuit and Theory of Networks II & III</li>
-                    <li>Microprocessors</li>
-                    <li>Introduction to Engineering and Computing</li>
-                    <li>Wireless Communication I</li>
-                    <li>Control Engineering I</li>
-                    <li>Signals and Communication II</li>
-                </ul> 
-            </div>
-        </section>
+            <div class="teaching-container">
+                <section class="teaching-section">
+                    <h2><span class="institution"><a href="https://www.dkut.ac.ke" target="_blank">Dedan Kimathi University of Technology</a></span></h2>
+                    <h3>Position: Assistant Lecturer</h3>
+                    <div class="responsibilities">
+                        <h3>Courses Taught:</h3>
+                        <ul class="course-list">
+                            <li>Circuit and Theory of Networks II & III</li>
+                            <li>Microprocessors</li>
+                            <li>Introduction to Engineering and Computing</li>
+                            <li>Wireless Communication I</li>
+                            <li>Control Engineering I</li>
+                            <li>Signals and Communication II</li>
+                        </ul>
+                    </div>
+                </section>
 
-        <section class="teaching-section">
-            <h2><span class="institution"><a href="https://www.must.ac.ke/" target="_blank">Meru University of Science and Technology</a></span></h2>
-            <h3>Position: Engineering Lecturer (Part-time)</h3>
-            <div class="responsibilities"> 
-                <h3>Course Taught:</h3>
-                <ul class="course-list">
-                    <li>Electrical Measurements and Instrumentation</li>
-                </ul>
-            </div>
-        </section>
+                <section class="teaching-section">
+                    <h2><span class="institution"><a href="https://www.must.ac.ke/" target="_blank">Meru University of Science and Technology</a></span></h2>
+                    <h3>Position: Engineering Lecturer (Part-time)</h3>
+                    <div class="responsibilities">
+                        <h3>Course Taught:</h3>
+                        <ul class="course-list">
+                            <li>Electrical Measurements and Instrumentation</li>
+                        </ul>
+                    </div>
+                </section>
 
-        <section class="teaching-section">
-            <h2><span class="institution"><a href="https://www.kyu.ac.ke/" target="_blank">Kirinyaga University</a></span></h2>
-            <h3>Position: Engineering Lecturer (Part-time)</h3>
-            <div class="responsibilities"> 
-                <h3>Courses Taught:</h3>
-                <ul class="course-list">
-                    <li>Electromagnetics</li>
-                    <li>Digital Electronics II</li>
-                </ul>
+                <section class="teaching-section">
+                    <h2><span class="institution"><a href="https://www.kyu.ac.ke/" target="_blank">Kirinyaga University</a></span></h2>
+                    <h3>Position: Engineering Lecturer (Part-time)</h3>
+                    <div class="responsibilities">
+                        <h3>Courses Taught:</h3>
+                        <ul class="course-list">
+                            <li>Electromagnetics</li>
+                            <li>Digital Electronics II</li>
+                        </ul>
+                    </div>
+                </section>
             </div>
         </section>
     </main>
 
-    <footer> 
+    <footer>
         <p>FOLLOW: <a href="https://github.com/nahshonmokua" target="_blank" style="color: #3498db;">GITHUB</a> RSS FEED</p>
         <p>&copy; 2024 Nahshon Mokua Obiri. All rights reserved.</p>
     </footer>
