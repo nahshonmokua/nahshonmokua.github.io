@@ -79,18 +79,18 @@ nav ul li a.active:active {
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+    margin: 20px auto; /* Consistent margin for left, right, top, and bottom */
     padding: 20px;
-    max-width: 900px;
+    max-width: 900px; /* Ensures all sections have the same width */
     box-sizing: border-box;
 }
 
-/* Profile Container Styles */
+/* Profile Container */
 .profile-container {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .profile-photo {
@@ -133,71 +133,34 @@ nav ul li a.active:active {
     color: #003366;
 }
 
-/* Project Content Styles */
-.project-content {
-    display: flex;
-    align-items: flex-start;
-}
-
-.project-thumbnail {
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
-    margin-right: 20px;
-}
-
-.project-details h2 {
-    color: #2c3e50;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-
-.project-details p {
-    color: #34495e;
-    margin-bottom: 8px;
-}
-
-/* Presentation and Teaching Section Styles */
-.presentation-container, .teaching-section {
+/* Projects, Presentations, and Teaching Sections */
+.project-container,
+.presentation-container,
+.teaching-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.presentation, .teaching-section {
+.project, .presentation, .teaching-section {
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    box-sizing: border-box;
     transition: transform 0.3s ease;
 }
 
-.presentation:hover, .teaching-section:hover {
+.project:hover, .presentation:hover, .teaching-section:hover {
     transform: translateY(-5px);
 }
 
-.presentation h2, .teaching-section h2 {
-    color: #2c3e50;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-
-.presentation p, .teaching-section p {
-    color: #34495e;
-    margin-bottom: 8px;
-}
-
-.course-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.course-list li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.project-thumbnail {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 20px;
+    object-fit: cover;
 }
 
 /* Footer Styles */
