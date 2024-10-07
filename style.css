@@ -62,8 +62,14 @@ nav ul li a {
     transition: background-color 0.3s ease;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
+nav ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+nav ul li a.active,
+nav ul li a.active:hover,
+nav ul li a.active:focus,
+nav ul li a.active:active {
     background-color: #FF4500;
     color: #fff;
 }
@@ -79,17 +85,12 @@ nav ul li a.active {
     box-sizing: border-box;
 }
 
-/* Profile Container */
+/* Profile Container Styles */
 .profile-container {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 900px;
+    margin-bottom: 20px;
 }
 
 .profile-photo {
@@ -132,16 +133,10 @@ nav ul li a.active {
     color: #003366;
 }
 
-/* Projects Container */
-.project-container {
-    display: flex;
-    flex-direction: column;
-}
-
+/* Project Content Styles */
 .project-content {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 20px;
 }
 
 .project-thumbnail {
@@ -160,6 +155,49 @@ nav ul li a.active {
 .project-details p {
     color: #34495e;
     margin-bottom: 8px;
+}
+
+/* Presentation and Teaching Section Styles */
+.presentation-container, .teaching-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.presentation, .teaching-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.presentation:hover, .teaching-section:hover {
+    transform: translateY(-5px);
+}
+
+.presentation h2, .teaching-section h2 {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.presentation p, .teaching-section p {
+    color: #34495e;
+    margin-bottom: 8px;
+}
+
+.course-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 /* Footer Styles */
@@ -202,7 +240,7 @@ footer {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 120px;
+        padding-top: 120px; /* Adjust padding for smaller screens */
     }
 
     nav {
