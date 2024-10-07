@@ -62,43 +62,32 @@ nav ul li a {
     transition: background-color 0.3s ease;
 }
 
-nav ul li a:hover {
-    background-color: #f0f0f0;
-}
-
-nav ul li a.active,
-nav ul li a.active:hover,
-nav ul li a.active:focus,
-nav ul li a.active:active {
+nav ul li a:hover,
+nav ul li a.active {
     background-color: #FF4500;
     color: #fff;
 }
 
-/* Styled Section for Consistency Across All Pages */
-.styled-section {
+/* Section Container Style for Uniform Look */
+.section-container {
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; /* Consistent margin for left, right, top, and bottom */
+    margin: 20px auto;
     padding: 20px;
-    max-width: 900px; /* Ensures all sections have the same width */
+    max-width: 900px;
     box-sizing: border-box;
-    transition: transform 0.3s ease;
 }
 
-.styled-section:hover {
-    transform: translateY(-5px);
-}
-
-/* Profile Container for Consistent Look */
+/* Profile Container */
 .profile-container {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    background-color: #f9f9f9; /* Match section styles */
+    background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; /* Consistent margin */
+    margin: 20px auto;
     padding: 20px;
     max-width: 900px;
 }
@@ -143,6 +132,36 @@ nav ul li a.active:active {
     color: #003366;
 }
 
+/* Projects Container */
+.project-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.project-thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.project-details h2 {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.project-details p {
+    color: #34495e;
+    margin-bottom: 8px;
+}
+
 /* Footer Styles */
 footer {
     background-color: #333;
@@ -150,10 +169,6 @@ footer {
     text-align: center;
     padding: 20px 0;
     margin-top: auto;
-}
-
-footer p {
-    margin-bottom: 10px;
 }
 
 .footer-link {
@@ -187,7 +202,7 @@ footer p {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 120px; /* Adjust padding for smaller screens */
+        padding-top: 120px;
     }
 
     nav {
