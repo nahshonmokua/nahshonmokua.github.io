@@ -251,3 +251,91 @@ footer {
         font-size: 0.9em;
     }
 }
+ 
+
+/* Style all hyperlinks to be bold and green */
+a {
+    color: green;
+    text-decoration: none; /* Removes the underline */
+}
+
+/* Add underline on hover */
+a:hover {
+    text-decoration: underline; /* Underline appears on hover */
+}
+
+
+/* Apply the Roboto font universally */
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Roboto as the primary font, Arial as fallback */
+    color: #333; /* Set a base text color */
+    line-height: 1.6; /* Improve readability with line spacing */
+}
+
+/* Styling for h2 headings (all h2 elements) */
+h2 {
+    color: #2E8B57; /* Sea green color */
+    font-family: 'Roboto', Arial, sans-serif; /* Ensure Roboto is used */
+    font-weight: 700; /* Make h2 headings bold */
+    font-size: 2em;   /* Adjust font size */
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* Additional universal styling for h1, p, etc. */
+h1 {
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+p {
+    margin-bottom: 1em; /* Adds spacing between paragraphs */
+    font-size: 1.1em;   /* Slightly larger font for better readability */
+}
+
+
+/* Social Links Styling */
+.social-links a i {
+    font-size: 1.5em;          /* Increase icon size */
+    margin-right: 10px;        /* Space between icons */
+    transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+.social-links a {
+    color: initial;            /* Reset link color to default */
+    text-decoration: none;     /* Remove underline */
+}
+
+/* Define specific colors for each icon */
+.social-links a i.fa-envelope {
+    color: #D44638;            /* Email red */
+}
+
+.social-links a i.fa-researchgate {
+    color: #00B3A4;            /* ResearchGate teal */
+}
+
+.social-links a i.fa-linkedin {
+    color: #0077B5;            /* LinkedIn blue */
+}
+
+.social-links a i.fa-github {
+    color: #333;               /* GitHub black */
+}
+
+.social-links a i.fa-youtube {
+    color: #FF0000;            /* YouTube red */
+}
+
+.social-links a i.fa-graduation-cap {
+    color: #4285F4;            /* Google Scholar blue */
+}
+
+.social-links a i.fa-orcid {
+    color: #A6CE39;            /* ORCID green */
+}
+
+/* Hover effect to enlarge icons slightly */
+.social-links a:hover i {
+    transform: scale(1.2);     /* Enlarge icon on hover */
+}
