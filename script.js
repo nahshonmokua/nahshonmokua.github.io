@@ -1,3 +1,5 @@
+// theme.js
+
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -42,11 +44,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Toggle Dark Mode
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
+    // Dark/Light Mode Toggle
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleButton ? themeToggleButton.querySelector('i') : null;
+
+    if (themeToggleButton && themeIcon) {
+        // Retrieve saved theme from localStorage or set based on system preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+        // Apply the initial theme
+        document.documentElement.setAttribute('data-theme', initialTheme);
+        updateIcon(initialTheme);
+
+        // Event Listener for Toggle Button
+        themeToggleButton.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            theme = theme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateIcon(theme);
         });
+
+        // Function to Update Icon
+        function updateIcon(theme) {
+            if (theme === 'light') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeToggleButton.setAttribute('aria-label', 'Switch to Dark Mode');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeToggleButton.setAttribute('aria-label', 'Switch to Light Mode');
+            }
+        }
     }
 });
