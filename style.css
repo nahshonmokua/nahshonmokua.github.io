@@ -57,7 +57,7 @@ body {
     line-height: 1.6; /* Improve readability with line spacing */
     color: var(--text-color); /* Base text color from variables */
     background-color: var(--background-color); /* Background color from variables */
-    padding-top: 80px;  /* Account for fixed header height */
+    padding-top: 80px; /* Account for fixed header height */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -94,7 +94,7 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     padding: 0; /* Remove default padding */
-    margin: 0;  /* Remove default margin */
+    margin: 0; /* Remove default margin */
 }
 
 nav ul li {
@@ -134,12 +134,12 @@ nav ul li a.active:active {
     transition: color 0.3s;
 }
 
-#theme-toggle:focus {
-    outline: none;
-}
-
 #theme-toggle:hover {
     color: var(--accent-color); /* Accent color on hover */
+}
+
+#theme-toggle:focus {
+    outline: none;
 }
 
 /* -------------------------------- */
@@ -245,8 +245,8 @@ nav ul li a.active:active {
 }
 
 .social-links a i {
-    font-size: 1.5em;          /* Increase icon size */
-    margin-right: 10px;        /* Space between icons */
+    font-size: 1.5em; /* Increase icon size */
+    margin-right: 10px; /* Space between icons */
     transition: transform 0.3s ease, color 0.3s;
 }
 
@@ -257,81 +257,31 @@ nav ul li a.active:active {
 
 /* Define specific colors for each icon */
 .social-links a i.fa-envelope {
-    color: #D44638;            /* Email red */
+    color: #D44638; /* Email red */
 }
 
 .social-links a i.fa-researchgate {
-    color: #00B3A4;            /* ResearchGate teal */
+    color: #00B3A4; /* ResearchGate teal */
 }
 
 .social-links a i.fa-linkedin {
-    color: #0077B5;            /* LinkedIn blue */
+    color: #0077B5; /* LinkedIn blue */
 }
 
 .social-links a i.fa-github {
-    color: #333;               /* GitHub black */
+    color: #333; /* GitHub black */
 }
 
 .social-links a i.fa-youtube {
-    color: #FF0000;            /* YouTube red */
+    color: #FF0000; /* YouTube red */
 }
 
 .social-links a i.fa-graduation-cap {
-    color: #4285F4;            /* Google Scholar blue */
+    color: #4285F4; /* Google Scholar blue */
 }
 
 .social-links a i.fa-orcid {
-    color: #A6CE39;            /* ORCID green */
-}
-
-/* -------------------------------- */
-/* Typography Styles */
-/* -------------------------------- */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', Arial, sans-serif;
-}
-
-h1 {
-    font-weight: bold;
-    font-size: 2.5em;
-    color: #0977e6;
-}
-
-h2 {
-    color: var(--header-text-color); /* Dynamic color based on theme */
-    font-weight: 700;
-    font-size: 2em;
-    margin-top: 20px;
-    margin-bottom: 15px;
-}
-
-h3 {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: #2c14af;
-}
-
-p {
-    margin-bottom: 1em; /* Adds spacing between paragraphs */
-    font-size: 1.1em;   /* Slightly larger font for better readability */
-    color: var(--section-text-color); /* Section text color from variables */
-}
-
-/* -------------------------------- */
-/* Global Link Styles */
-/* -------------------------------- */
-/* Style all hyperlinks to be bold and green */
-a {
-    color: var(--link-color); /* Green color from variables */
-    font-weight: bold;
-    text-decoration: none; /* Removes the underline */
-    transition: color 0.3s;
-}
-
-/* Add underline on hover */
-a:hover {
-    text-decoration: underline; /* Underline appears on hover */
-    color: var(--link-hover-color); /* Hover color from variables */
+    color: #A6CE39; /* ORCID green */
 }
 
 /* -------------------------------- */
@@ -372,6 +322,56 @@ a:hover {
 }
 
 /* -------------------------------- */
+/* Typography Styles */
+/* -------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2.5em;
+    color: #0977e6;
+}
+
+h2 {
+    color: var(--header-text-color); /* Dynamic color based on theme */
+    font-weight: 700;
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #2c14af;
+}
+
+p {
+    margin-bottom: 1em; /* Adds spacing between paragraphs */
+    font-size: 1.1em; /* Slightly larger font for better readability */
+    color: var(--section-text-color); /* Section text color from variables */
+}
+
+/* -------------------------------- */
+/* Global Link Styles */
+/* -------------------------------- */
+/* Style all hyperlinks to be bold and green */
+a {
+    color: var(--link-color); /* Green color from variables */
+    font-weight: bold;
+    text-decoration: none; /* Removes the underline */
+    transition: color 0.3s;
+}
+
+/* Add underline on hover */
+a:hover {
+    text-decoration: underline; /* Underline appears on hover */
+    color: var(--link-hover-color); /* Hover color from variables */
+}
+
+/* -------------------------------- */
 /* Footer Styles */
 /* -------------------------------- */
 /* Footer styles remain exactly as they were */
@@ -404,6 +404,27 @@ footer {
 
 .footer-link:hover i {
     color: #2980b9; /* Darker blue on hover */
+}
+
+/* -------------------------------- */
+/* GitHub Icon Fixed Color Styling */
+/* -------------------------------- */
+/* Ensure the GitHub icon is white in both themes */
+.github-fixed-color i.fa-github {
+    color: #ffffff !important; /* White color with high specificity */
+    transition: transform 0.3s ease; /* Smooth transition for any transform changes */
+}
+
+/* Maintain white color on hover, focus, and active states */
+.github-fixed-color:hover i.fa-github,
+.github-fixed-color:focus i.fa-github,
+.github-fixed-color:active i.fa-github {
+    color: #ffffff !important; /* Retain white color */
+}
+
+/* Optional: Add a subtle hover effect for interactivity */
+.github-fixed-color:hover i.fa-github {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
 
 /* -------------------------------- */
