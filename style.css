@@ -57,7 +57,8 @@ body {
     line-height: 1.6; /* Improve readability with line spacing */
     color: var(--text-color); /* Base text color from variables */
     background-color: var(--background-color); /* Background color from variables */
-    padding-top: 80px; /* Account for fixed header height */
+    /* Remove static padding-top to handle dynamically */
+    padding-top: 0; /* Will be set dynamically via JavaScript */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -71,7 +72,7 @@ header {
     background-color: var(--header-background); /* Header background from variables */
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
+    position: fixed; /* Fix the header to the top */
     font-size: 1.3em;
     top: 0;
     left: 0;
@@ -167,7 +168,7 @@ nav ul li a.active:active {
 .profile-container {
     display: flex;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens to prevent overlap */
     font-size: 0.9em;
     margin-bottom: 40px;
 }
@@ -184,7 +185,7 @@ nav ul li a.active:active {
 
 .profile-info {
     flex: 1;
-    min-width: 300px;
+    min-width: 300px; /* Ensures content doesn't get too narrow on small screens */
 }
 
 .profile-info h1 {
@@ -206,7 +207,7 @@ nav ul li a.active:active {
 .social-links {
     margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Prevents overflow by allowing links to wrap */
     gap: 10px;
 }
 
@@ -291,7 +292,7 @@ nav ul li a.active:active {
 .presentation-container,
 .teaching-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack items vertically to prevent overlap */
     gap: 20px;
 }
 
@@ -432,71 +433,75 @@ footer {
 /* -------------------------------- */
 @media (max-width: 1024px) {
     .profile-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack profile elements vertically */
         align-items: center;
     }
 
     .profile-photo {
-        margin-right: 0;
+        margin-right: 0; /* Remove right margin for better alignment */
     }
 
     .profile-info {
-        text-align: center;
+        text-align: center; /* Center text on smaller screens */
     }
 
     .social-links {
-        justify-content: center;
+        justify-content: center; /* Center social links */
     }
 }
 
 @media (max-width: 768px) {
     body {
-        padding-top: 120px; /* Adjust padding for smaller screens */
+        padding-top: 120px; /* Increased padding to accommodate taller header on smaller screens */
     }
 
     nav {
-        flex-direction: column;
+        flex-direction: column; /* Stack navigation vertically */
     }
 
     nav ul {
         margin-top: 20px;
-        justify-content: center;
+        justify-content: center; /* Center navigation items */
     }
 
     nav ul li {
-        margin: 0 10px 10px;
+        margin: 0 10px 10px; /* Adjust margins for better spacing */
     }
 
     .profile-photo {
         width: 150px;
-        height: 150px;
+        height: 150px; /* Reduce photo size on smaller screens */
     }
 
     .profile-info h1 {
-        font-size: 1.8em;
+        font-size: 1.8em; /* Adjust heading size */
     }
 
     h2 {
-        font-size: 1.3em;
+        font-size: 1.3em; /* Adjust subheading size */
     }
 }
 
 @media (max-width: 480px) {
+    body {
+        padding-top: 140px; /* Further increased padding for very small screens to prevent overlap */
+    }
+
     .profile-photo {
         width: 120px;
-        height: 120px;
+        height: 120px; /* Further reduce photo size for very small screens */
     }
 
     .profile-info h1 {
-        font-size: 1.5em;
+        font-size: 1.5em; /* Further adjust heading size */
     }
 
     h2 {
-        font-size: 1.2em;
+        font-size: 1.2em; /* Further adjust subheading size */
     }
 
     .social-links a {
-        font-size: 0.9em;
+        font-size: 0.9em; /* Reduce font size for social links */
     }
 }
 
