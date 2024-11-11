@@ -411,7 +411,7 @@ footer {
 /* -------------------------------- */
 /* Ensure the GitHub icon is white in both themes */
 .github-fixed-color i.fa-github {
-    color: #ffffff !important; /* White color with high specificity */
+    color: #a0a0c5 !important; /* White color with high specificity */
     transition: transform 0.3s ease; /* Smooth transition for any transform changes */
 }
 
@@ -419,7 +419,7 @@ footer {
 .github-fixed-color:hover i.fa-github,
 .github-fixed-color:focus i.fa-github,
 .github-fixed-color:active i.fa-github {
-    color: #ffffff !important; /* Retain white color */
+    color: #08ec2e !important; /* Retain white color */
 }
 
 /* Optional: Add a subtle hover effect for interactivity */
