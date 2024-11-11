@@ -499,3 +499,20 @@ footer {
         font-size: 0.9em;
     }
 }
+
+.publication-link {
+    display: inline-block;
+    padding: 3px 10px;
+    margin: 5px;
+    color: #fff; /* Text color */
+    background-color: #4CAF50; /* Background color */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.publication-link:hover {
+    background-color: #45a049; /* Darker shade for hover effect */
+}
