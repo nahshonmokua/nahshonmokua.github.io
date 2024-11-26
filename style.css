@@ -350,6 +350,7 @@ h3 {
 }
 
 p {
+    margin-top: 1em; /* Adds spacing between paragraphs */
     margin-bottom: 1em; /* Adds spacing between paragraphs */
     font-size: 1.1em; /* Slightly larger font for better readability */
     color: var(--section-text-color); /* Section text color from variables */
