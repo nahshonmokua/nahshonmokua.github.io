@@ -54,10 +54,9 @@
 /* -------------------------------- */
 body {
     font-family: 'Roboto', Arial, sans-serif; /* Roboto as the primary font, Arial as fallback */
-    line-height: 1.6; /* Improve readability with line spacing */
+    line-height: 1.4; /* Reduced line spacing for better compactness */
     color: var(--text-color); /* Base text color from variables */
     background-color: var(--background-color); /* Background color from variables */
-    /* Remove static padding-top to handle dynamically */
     padding-top: 0; /* Will be set dynamically via JavaScript */
     display: flex;
     flex-direction: column;
@@ -70,10 +69,10 @@ body {
 /* -------------------------------- */
 header {
     background-color: var(--header-background); /* Header background from variables */
-    padding: 20px 0;
+    padding: 15px 0; /* Reduced padding to decrease white space */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed; /* Fix the header to the top */
-    font-size: 1.3em;
+    font-size: 1.2em; /* Slightly reduced font size */
     top: 0;
     left: 0;
     right: 0;
@@ -87,7 +86,7 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px; /* Reduced padding */
 }
 
 nav ul {
@@ -99,14 +98,14 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px; /* Even spacing between links */
+    margin: 0 10px; /* Reduced spacing between links */
 }
 
 nav ul li a {
     text-decoration: none;
     color: var(--nav-link-color); /* Navigation link color from variables */
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 5px 8px; /* Reduced padding */
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -130,7 +129,7 @@ nav ul li a.active:active {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Slightly reduced font size */
     color: var(--nav-link-color); /* Toggle button color from variables */
     transition: color 0.3s;
 }
@@ -150,15 +149,15 @@ nav ul li a.active:active {
     background-color: var(--section-background); /* Section background from variables */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; /* Consistent margin for left, right, top, and bottom */
-    padding: 20px;
+    margin: 20px auto; /* Reduced margin for less white space */
+    padding: 5px 5px; /* Reduced padding */
     max-width: 900px; /* Ensures all sections have the same width */
     box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+    transition: box-shadow 0.3s ease, background-color 0.3s;
 }
 
 .section-container:hover {
-    transform: translateY(-5px);
+    /* Removed transform to eliminate "shake" effect */
     box-shadow: 0 8px 8px rgba(44, 62, 80, 0.15);
 }
 
@@ -169,52 +168,53 @@ nav ul li a.active:active {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap; /* Allows items to wrap on smaller screens to prevent overlap */
-    font-size: 0.9em;
-    margin-bottom: 40px;
+    font-size: 0.9em; /* Slightly reduced font size */
+    margin-bottom: 20px; /* Reduced margin */
+    line-height: 1; /* Reduced line spacing for better compactness */
 }
 
 .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 180px; /* Reduced width */
+    height: 180px; /* Reduced height */
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 40px;
-    margin-bottom: 20px;
+    margin-right: 30px; /* Reduced margin */
+    margin-bottom: 15px; /* Reduced margin */
     border: 4px solid #3498DB; /* Border for emphasis */
 }
 
 .profile-info {
     flex: 1;
-    min-width: 300px; /* Ensures content doesn't get too narrow on small screens */
+    min-width: 250px; /* Reduced min-width */
 }
 
 .profile-info h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
+    font-size: 2em; /* Reduced font size */
+    margin-bottom: 8px; /* Reduced margin */
     font-weight: bold;
     color: var(--header-text-color); /* Updated to use CSS variable */
 }
 
 .profile-info p {
-    margin-bottom: 5px;
+    margin-bottom: 4px; /* Reduced margin */
     color: var(--section-text-color); /* Section text color from variables */
-    font-size: 1.1em;
+    font-size: 1em; /* Reduced font size */
 }
 
 /* -------------------------------- */
 /* Social Links Styling */
 /* -------------------------------- */
 .social-links {
-    margin-top: 20px;
+    margin-top: 15px; /* Reduced margin */
     display: flex;
     flex-wrap: wrap; /* Prevents overflow by allowing links to wrap */
-    gap: 10px;
+    gap: 8px; /* Reduced gap */
 }
 
 .social-links a {
     text-decoration: none;
     color: var(--link-color); /* Original link color from variables */
-    font-size: 1em;
+    font-size: 0.9em; /* Reduced font size */
     transition: color 0.3s ease;
 }
 
@@ -246,8 +246,8 @@ nav ul li a.active:active {
 }
 
 .social-links a i {
-    font-size: 1.5em; /* Increase icon size */
-    margin-right: 10px; /* Space between icons */
+    font-size: 1.3em; /* Reduced icon size */
+    margin-right: 8px; /* Reduced space between icons */
     transition: transform 0.3s ease, color 0.3s;
 }
 
@@ -293,7 +293,7 @@ nav ul li a.active:active {
 .teaching-container {
     display: flex;
     flex-direction: column; /* Stack items vertically to prevent overlap */
-    gap: 20px;
+    gap: 15px; /* Reduced gap */
 }
 
 .project,
@@ -302,23 +302,25 @@ nav ul li a.active:active {
     background-color: var(--section-background); /* Section background from variables */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(44, 62, 80, 0.1);
-    padding: 20px;
+    margin: 20px auto; /* Reduced margin for less white space */
+    padding: 0px 5px; /* Reduced padding */
     box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+    transition: box-shadow 0.3s ease, background-color 0.3s;
+
 }
 
 .project:hover,
 .presentation:hover,
 .teaching-section:hover {
-    transform: translateY(-5px);
+    /* Removed transform to eliminate "shake" effect */
     box-shadow: 0 8px 12px rgba(44, 62, 80, 0.15);
 }
 
 .project-thumbnail {
-    width: 100px; /* Keeping original image sizes */
-    height: 100px;
+    width: 90px; /* Reduced image size */
+    height: 90px; /* Reduced image size */
     float: left;
-    margin-right: 20px;
+    margin-right: 15px; /* Reduced margin */
     object-fit: cover;
 }
 
@@ -327,32 +329,32 @@ nav ul li a.active:active {
 /* -------------------------------- */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', Arial, sans-serif;
+    margin: 0; /* Removes default space */
 }
 
 h1 {
+    margin: 0; /* Removes default space */
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 2em; /* Reduced font size */
     color: #0977e6;
 }
 
 h2 {
     color: var(--header-text-color); /* Dynamic color based on theme */
     font-weight: 700;
-    font-size: 2em;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    font-size: 1.8em; /* Reduced font size */
 }
 
 h3 {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.3em; /* Reduced font size */
     color: #af1488;
 }
 
 p {
-    margin-top: 1em; /* Adds spacing between paragraphs */
-    margin-bottom: 1em; /* Adds spacing between paragraphs */
-    font-size: 1.1em; /* Slightly larger font for better readability */
+    margin-top: 0.8em; /* Reduced spacing between paragraphs */
+    margin-bottom: 0.8em; /* Reduced spacing between paragraphs */
+    font-size: 1em; /* Reduced font size */
     color: var(--section-text-color); /* Section text color from variables */
 }
 
@@ -381,7 +383,7 @@ footer {
     background-color: var(--footer-background); /* Footer background from variables */
     color: var(--footer-text-color); /* Footer text color from variables */
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0; /* Reduced padding */
     margin-top: auto;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -453,7 +455,7 @@ footer {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 120px; /* Increased padding to accommodate taller header on smaller screens */
+        padding-top: 100px; /* Reduced padding to accommodate header */
     }
 
     nav {
@@ -461,64 +463,68 @@ footer {
     }
 
     nav ul {
-        margin-top: 20px;
+        margin-top: 15px; /* Reduced margin */
         justify-content: center; /* Center navigation items */
     }
 
     nav ul li {
-        margin: 0 10px 10px; /* Adjust margins for better spacing */
+        margin: 0 8px 8px; /* Adjust margins for better spacing */
     }
 
     .profile-photo {
-        width: 150px;
-        height: 150px; /* Reduce photo size on smaller screens */
+        width: 130px; /* Reduced photo size */
+        height: 130px; /* Reduced photo size */
     }
 
     .profile-info h1 {
-        font-size: 1.8em; /* Adjust heading size */
+        font-size: 1.6em; /* Adjust heading size */
     }
 
     h2 {
-        font-size: 1.3em; /* Adjust subheading size */
+        font-size: 1.5em; /* Adjust subheading size */
     }
 }
 
 @media (max-width: 480px) {
     body {
-        padding-top: 140px; /* Further increased padding for very small screens to prevent overlap */
+        padding-top: 120px; /* Further reduced padding for very small screens */
     }
 
     .profile-photo {
-        width: 120px;
-        height: 120px; /* Further reduce photo size for very small screens */
+        width: 100px; /* Further reduce photo size */
+        height: 100px; /* Further reduce photo size */
     }
 
     .profile-info h1 {
-        font-size: 1.5em; /* Further adjust heading size */
+        font-size: 1.3em; /* Further adjust heading size */
     }
 
     h2 {
-        font-size: 1.2em; /* Further adjust subheading size */
+        font-size: 1.1em; /* Further adjust subheading size */
     }
 
     .social-links a {
-        font-size: 0.9em; /* Reduce font size for social links */
+        font-size: 0.8em; /* Reduce font size for social links */
     }
 }
 
 .publication-link {
     display: inline-block;
-    padding: 3px 10px;
-    margin: 5px;
+    padding: 3px 8px; /* Reduced padding */
+    margin: 4px; /* Reduced margin */
     color: #fff; /* Text color */
     background-color: #4CAF50; /* Background color */
     border-radius: 5px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px; /* Reduced font size */
     font-weight: bold;
     transition: background-color 0.3s;
 }
 
 .publication-link:hover {
     background-color: #45a049; /* Darker shade for hover effect */
+}
+
+li {
+    margin-left: 30px;
 }
