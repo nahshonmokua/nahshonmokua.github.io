@@ -1,124 +1,200 @@
-// theme.js
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('nav ul li a');
-    let scrollOffset = 0; // This will be set based on the header's height
+    const navLinks = document.querySelectorAll('.header-nav a');
+    const themeToggleButton = document.getElementById('theme-toggle-icon');
+    const sectionIds = ['about-me', 'resume', 'research', 'publications', 'presentations', 'teaching', 'news'];
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
-    /**
-     * Retrieves the current height of the header.
-     * @returns {number} The height of the header in pixels.
-     */
-    function getHeaderHeight() {
-        const header = document.querySelector('header');
-        return header ? header.offsetHeight : 70; // Default to 70px if header is not found
-    }
-
-    /**
-     * Adjusts the body's padding-top to match the header's height.
-     * This ensures that the content below the header is not overlapped.
-     */
-    function adjustBodyPadding() {
-        const header = document.querySelector('header');
-        const body = document.body;
-        if (header) {
-            const headerHeight = header.offsetHeight;
-            body.style.paddingTop = `${headerHeight}px`;
-            scrollOffset = headerHeight; // Update scrollOffset to align with the header's height
-        }
-    }
-
-    // Initial adjustment when the DOM is fully loaded
-    adjustBodyPadding();
-
-    // Adjust padding after all resources have loaded (e.g., images)
-    window.addEventListener('load', adjustBodyPadding);
-
-    // Adjust padding on window resize to handle dynamic changes in header size
-    window.addEventListener('resize', adjustBodyPadding);
-
-    /**
-     * Implements smooth scrolling behavior for in-page navigation links.
-     */
     navLinks.forEach(link => {
-        const targetId = link.getAttribute('href');
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
 
-        // Only add smooth scrolling if the href is an in-page anchor
-        if (targetId.startsWith('#')) {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                // Scroll to the section smoothly
+                targetSection.scrollIntoView({ behavior: 'smooth' });
 
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop - scrollOffset,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        }
-    });
-
-    /**
-     * Highlights the active section's corresponding navigation link based on scroll position.
-     */
-    const sections = document.querySelectorAll('section');
-    window.addEventListener('scroll', () => {
-        let currentSectionId = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - scrollOffset;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                currentSectionId = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                // Update active link
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
                 link.classList.add('active');
             }
         });
     });
 
-    // Dark/Light Mode Toggle Functionality
-    const themeToggleButton = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleButton ? themeToggleButton.querySelector('i') : null;
+    // Intersection Observer for active link highlighting
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Triggers when 50% of the section is visible
+    };
 
-    if (themeToggleButton && themeIcon) {
-        // Determine the initial theme based on localStorage or system preference
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.id;
 
-        // Apply the initial theme to the document
-        document.documentElement.setAttribute('data-theme', initialTheme);
-        updateThemeIcon(initialTheme);
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
 
-        // Toggle theme on button click
-        themeToggleButton.addEventListener('click', () => {
-            let currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
+                const activeLink = document.querySelector(`.header-nav a[href="#${sectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
         });
+    }, observerOptions);
 
-        /**
-         * Updates the theme toggle button icon based on the current theme.
-         * @param {string} theme - The current theme ('light' or 'dark').
-         */
-        function updateThemeIcon(theme) {
-            if (theme === 'light') {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-                themeToggleButton.setAttribute('aria-label', 'Switch to Dark Mode');
-            } else {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-                themeToggleButton.setAttribute('aria-label', 'Switch to Light Mode');
+    sections.forEach(section => {
+        if (section) {
+            observer.observe(section);
+        }
+    });
+
+    // Dark/Light Mode Toggle Functionality
+    if (themeToggleButton) {
+        const themeIcon = themeToggleButton.querySelector('i');
+
+        if (themeIcon) {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+            document.documentElement.setAttribute('data-theme', initialTheme);
+            updateThemeIcon(initialTheme);
+
+            themeToggleButton.addEventListener('click', () => {
+                let currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+
+            function updateThemeIcon(theme) {
+                if (theme === 'light') {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                    themeToggleButton.setAttribute('aria-label', 'Switch to Dark Mode');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                    themeToggleButton.setAttribute('aria-label', 'Switch to Light Mode');
+                }
             }
         }
     }
+// Search Modal Functionality
+    const searchIcon = document.getElementById('search-icon');
+    const searchModal = document.getElementById('search-modal');
+    const closeButton = document.querySelector('.close-button');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const pageContent = document.getElementById('page-content');
+
+    if (searchIcon && searchModal && closeButton && searchInput && searchResults && pageContent) {
+        searchIcon.addEventListener('click', (e) => {
+            e.preventDefault();
+            searchModal.style.display = 'block';
+            searchInput.focus();
+        });
+
+        closeButton.addEventListener('click', () => {
+            searchModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target == searchModal) {
+                searchModal.style.display = 'none';
+            }
+        });
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            searchResults.innerHTML = '';
+
+            if (searchTerm.length < 2) {
+                return;
+            }
+
+            const allText = pageContent.innerText.split('\n');
+            const matches = [];
+
+            allText.forEach(line => {
+                if (line.toLowerCase().includes(searchTerm)) {
+                    matches.push(line);
+                }
+            });
+
+            if (matches.length > 0) {
+                matches.forEach(match => {
+                    const resultItem = document.createElement('div');
+                    resultItem.classList.add('result-item');
+                    resultItem.innerHTML = match.replace(new RegExp(searchTerm, 'gi'), (match) => `<strong>${match}</strong>`);
+                    searchResults.appendChild(resultItem);
+                });
+            } else {
+                searchResults.innerHTML = '<div class="result-item">No matching documents found.</div>';
+            }
+        });
+    }
+
+    // Responsive Navigation Logic
+    const nav = document.querySelector('.header-nav');
+    const navVisible = document.querySelector('.nav-visible');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    function adjustNav() {
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth <= 768) {
+            // Mobile view: move all items to dropdown
+            while (navVisible.children.length > 0) {
+                const item = navVisible.firstElementChild;
+                dropdownMenu.appendChild(item);
+            }
+            hamburgerMenu.hidden = false;
+        } else {
+            // Desktop view: move items back to nav
+            while (dropdownMenu.children.length > 0) {
+                const item = dropdownMenu.firstElementChild;
+                navVisible.appendChild(item);
+            }
+            hamburgerMenu.hidden = true;
+            dropdownMenu.hidden = true;
+        }
+    }
+
+    hamburgerMenu.addEventListener('click', () => {
+        const isExpanded = hamburgerMenu.getAttribute('aria-expanded') === 'true';
+        hamburgerMenu.setAttribute('aria-expanded', !isExpanded);
+        dropdownMenu.hidden = !dropdownMenu.hidden;
+        if (!dropdownMenu.hidden) {
+            dropdownMenu.style.display = 'flex';
+        } else {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+
+    // Close dropdown when a link is clicked
+    dropdownMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            hamburgerMenu.setAttribute('aria-expanded', 'false');
+            dropdownMenu.hidden = true;
+            dropdownMenu.style.display = 'none';
+        }
+    });
+
+    // Close dropdown when clicking outside
+    window.addEventListener('click', (e) => {
+        if (!hamburgerMenu.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            hamburgerMenu.setAttribute('aria-expanded', 'false');
+            dropdownMenu.hidden = true;
+            dropdownMenu.style.display = 'none';
+        }
+    });
+
+    window.addEventListener('resize', adjustNav);
+    adjustNav();
 });

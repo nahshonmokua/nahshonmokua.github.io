@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nahshon Mokua - Home</title>
-    
+
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
@@ -16,195 +16,630 @@
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!--  -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-pO8HfrDhV3m/0HV33h+gU+lEcl5C4L7X9LX2J/65psV/0GtZ89OfJQ5b1w9W/8Fj0q3nZG7f4mD+K+g1LZ+7Ww=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    />
 
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="./" class="active">Home</a></li>|
-                <li><a href="./research/">Research</a></li>|
-                <li><a href="./publications/">Publications</a></li>|
-                <li><a href="./presentations/">Presentations</a></li>|
-                <li><a href="./teaching/">Teaching</a></li>|
-                <li><a href="./resume/">Resume</a></li>
-            </ul>
-            <!-- Updated Toggle Button -->
-            <button id="theme-toggle" aria-label="Toggle Dark/Light Mode"><i class="fas fa-moon"></i> </button>
-          </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Profile Section -->
-        <section class="profile-container section-container">
-            <img src="assets/nash.jpg" alt="Nahshon Mokua Obiri" class="profile-photo">
-            <div class="profile-info">
-                <h1>Nahshon Mokua</h1>
-                <p>Ph.D. Student in Electrical Engineering and Computer Science</p>
-                <p><a href="https://ubi29.informatik.uni-siegen.de/usi/" target="_blank" rel="noopener noreferrer">Ubiquitous Computing Group</a></p>
-                <p><strong>Office:</strong>Office: H-A 8105, Faculty 4, Hölderlinstrasse 3, University of Siegen</p>
-                <p><strong>Tel:</strong>Tel: +49 (0)271 740-2829</p>
-                <div class="social-links">
-                    <a href="mailto:nash2023ge@gmail.com" title="Email"target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.researchgate.net/profile/Nahshon-Mokua-Obiri" title="ResearchGate" target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate"></i></a>
-                    <a href="https://www.linkedin.com/in/nahshon-obiri-940b34b6/" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/nahshonmokua" class="github-fixed-color" title="GitHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.youtube.com/@nahshonmokua8137" title="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    <a href="https://scholar.google.com/citations?user=L2j1OT8AAAAJ&hl=de" title="Google Scholar" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="https://orcid.org/my-orcid?orcid=0000-0001-7877-4848" title="ORCID" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i></a>
-                </div>
+    <header id="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="#about-me" class="home-link">Nahshon Mokua</a>
             </div>
-        </section>
-
-        <!-- HomePage Section -->
-        <section class="section-container">
-            <!-- About Me Section -->
-            <section id="about-me" class="section-container">
-                <h2>About Me</h2>
-                <p>
-                    Hello! Welcome to my personal portfolio. I am a Ph.D Student in Electrical Engineering and Computer Science at the 
-                    <a href="https://www.uni-siegen.de/start/" target="_blank" rel="noopener noreferrer">University of Siegen</a>, Germany. 
-                    I do my research with the 
-                    <a href="https://ubi29.informatik.uni-siegen.de/usi/" target="_blank" rel="noopener noreferrer">Ubiquitous Computing Group</a>, 
-                    led by 
-                    <a href="https://ubi29.informatik.uni-siegen.de/usi/team_kvl.html" target="_blank" rel="noopener noreferrer">
-                        Prof. Dr. Kristof Van Laerhoven</a>. I specialize in 
-                    <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" target="_blank" rel="noopener noreferrer">
-                        LoRaWAN
-                    </a> integration with wearable sensor networks, aiming to create smart and sustainable technological solutions.
-                </p>
-                
-                <p>
-                    My passion lies at the intersection of 
-                    <a href="https://www.britannica.com/technology/artificial-intelligence/Methods-and-goals-in-AI" target="_blank" rel="noopener noreferrer">
-                        Electrical Engineering</a>, 
-                    <a href="https://www.britannica.com/technology/artificial-intelligence/Methods-and-goals-in-AI" target="_blank" rel="noopener noreferrer">
-                        Artificial Intelligence</a>, 
-                    <a href="https://de.wikipedia.org/wiki/Data_Science" target="_blank" rel="noopener noreferrer">Data Science</a>, 
-                    and Sustainable Development. I thrive in collaborative environments and am dedicated to contributing to the 
-                    <a href="https://sdgs.un.org/goals" target="_blank" rel="noopener noreferrer">
-                        Sustainable Development Goals (SDGs)
-                    </a> through innovative research.
-                </p>
-                
-                <p>
-                    Let’s connect and explore how we can collaborate to create impactful and sustainable technological solutions!
-                </p>
-                
-                
+            <nav class="header-nav">
+                <div class="nav-visible">
+                    <a href="#about-me">About Me</a>
+                    <a href="#research">Research</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#teaching">Teaching</a>
+                    <a href="#resume">Resume</a>
+                </div>
+            </nav>
+            <div class="header-right">
+                <a href="https://github.com/nahshonmokua" aria-label="GitHub" target="_blank"><i
+                        class="fab fa-github"></i></a>
+                <a href="#" id="search-icon" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a href="#" id="theme-toggle-icon" aria-label="Toggle Theme"><i class="fas fa-moon"></i></a>
+                <button id="hamburger-menu" class="hamburger-menu" aria-label="Toggle Menu" aria-expanded="false"
+                    hidden>
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div id="dropdown-menu" class="dropdown-menu" hidden></div>
+    </header>
+    <div id="main-wrapper">
+        <aside id="profile-sidebar">
+            <!-- Profile Section -->
+            <section class="profile-container ">
+                <img src="./assets/nash.jpg" alt="Nahshon Mokua Obiri" class="profile-photo">
+                <div class="">
+                    <h1>Nahshon Mokua</h1>
+                    <p>Ph.D. Student in Electrical Engineering and Computer Science</p>
+                    <p><a href="https://ubi2.informatik.uni-siegen.de/usi/" target="_blank"
+                            rel="noopener noreferrer">Ubiquitous Computing Group</a></p>
+                    <p><strong>Office:</strong>Office: H-A 8105, Faculty 4, Hölderlinstrasse 3, University of Siegen</p>
+                    <p><strong>Tel:</strong>Tel: +49 (0)271 740-2829</p>
+                    <div class="social-links">
+                        <a href="mailto:nash2023ge@gmail.com" aria-label="Email" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fas fa-envelope"></i><span class="social-link-text">Email</span>
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Nahshon-Mokua-Obiri" aria-label="ResearchGate"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-researchgate"></i><span class="social-link-text">ResearchGate</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nahshon-obiri-940b34b6/" aria-label="LinkedIn"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i><span class="social-link-text">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/nahshonmokua" class="github-fixed-color" aria-label="GitHub"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i><span class="social-link-text">GitHub</span>
+                        </a>
+                        <a href="https://www.youtube.com/@nahshonmokua8137" aria-label="YouTube" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fab fa-youtube"></i><span class="social-link-text">YouTube</span>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=L2j1OT8AAAAJ&hl=de"
+                            aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-graduation-cap"></i><span class="social-link-text">Google Scholar</span>
+                        </a>
+                        <a href="https://orcid.org/my-orcid?orcid=0000-0001-7877-4848" aria-label="ORCID"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-orcid"></i><span class="social-link-text">ORCID</span>
+                        </a>
+                    </div>
+                </div>
             </section>
+        </aside>
 
-            <!-- Latest Summary Section -->
-            <section id="news" class="section-container">
-                <h2>Summary of Events</h2>
-                <p>
-                    <strong>November 2024:</strong> 
+        <!-- Main Content -->
+        <main id="main-content">
+            <div id="page-content" class="">
+                <!-- About Me Section -->
+                <section id="about-me" class="">
+                    <h2>About Me</h2>
+                    <p>
+                        Hello! Welcome to my personal portfolio. I am a Ph.D Student in Electrical Engineering and
+                        Computer Science at the
+                        <a href="https://www.uni-siegen.de/start/" target="_blank" rel="noopener noreferrer">University
+                            of Siegen</a>, Germany.
+                        I do my research with the
+                        <a href="https://ubi29.informatik.uni-siegen.de/usi/" target="_blank"
+                            rel="noopener noreferrer">Ubiquitous Computing Group</a>,
+                        led by
+                        <a href="https://ubi29.informatik.uni-siegen.de/usi/team_kvl.html" target="_blank"
+                            rel="noopener noreferrer">
+                            Prof. Dr. Kristof Van Laerhoven</a>. I specialize in
+                        <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" target="_blank"
+                            rel="noopener noreferrer">
+                            LoRaWAN
+                        </a> integration with wearable sensor networks, aiming to create smart and sustainable
+                        technological solutions.
+                    </p>
+
+                    <p>
+                        My passion lies at the intersection of
+                        <a href="https://www.britannica.com/technology/artificial-intelligence/Methods-and-goals-in-AI"
+                            target="_blank" rel="noopener noreferrer">
+                            Electrical Engineering</a>,
+                        <a href="https://www.britannica.com/technology/artificial-intelligence/Methods-and-goals-in-AI"
+                            target="_blank" rel="noopener noreferrer">
+                            Artificial Intelligence</a>,
+                        <a href="https://de.wikipedia.org/wiki/Data_Science" target="_blank"
+                            rel="noopener noreferrer">Data Science</a>,
+                        and Sustainable Development. I thrive in collaborative environments and am dedicated to
+                        contributing to the
+                        <a href="https://sdgs.un.org/goals" target="_blank" rel="noopener noreferrer">
+                            Sustainable Development Goals (SDGs)
+                        </a> through innovative research.
+                    </p>
+
+                    <p>
+                        Let’s connect and explore how we can collaborate to create impactful and sustainable
+                        technological solutions!
+                    </p>
+
+
+                </section>
+
+                <br>
+                <!-- Latest Summary Section -->
+                <section id="news" class="">
+                    <h2>Summary of Events</h2>
+                    <p>
+                        <strong>November 2024:</strong>
                     <ul>
                         <li>
-                            Presented a poster on 
-                            <em>"A Data Descriptor for LoRaWAN Path Loss Measurements in an Indoor Office Setting: Impacts of Environmental Factors"</em> 
-                            at the 
-                            <a href="https://www.zess.uni-siegen.de/the-institute/" target="_blank" rel="noopener noreferrer">
+                            Presented a poster on
+                            <em>"A Data Descriptor for LoRaWAN Path Loss Measurements in an Indoor Office Setting:
+                                Impacts of Environmental Factors"</em>
+                            at the
+                            <a href="https://www.zess.uni-siegen.de/the-institute/" target="_blank"
+                                rel="noopener noreferrer">
                                 ZESS PhD Forum 2024.
                             </a>
                         </li>
                     </ul>
-                </p>
-                <p>
-                    <strong>May 2024:</strong> 
+                    </p>
+                    <p>
+                        <strong>May 2024:</strong>
                     <ul>
                         <li>
-                            Presented a poster on 
-                            <em>"LoRaWAN-Integrated Wearable Sensor Networks for Human Activity Recognition"</em> 
-                            at the 
-                            <a href="https://www.zess.uni-siegen.de/2024/05/full-house-at-zess-phd-research-forum-2024/" target="_blank" rel="noopener noreferrer">
+                            Presented a poster on
+                            <em>"LoRaWAN-Integrated Wearable Sensor Networks for Human Activity Recognition"</em>
+                            at the
+                            <a href="https://www.zess.uni-siegen.de/2024/05/full-house-at-zess-phd-research-forum-2024/"
+                                target="_blank" rel="noopener noreferrer">
                                 ZESS PhD Forum 2024.
                             </a>
                         </li>
                         <li>
-                            Gave a talk on <em>"LoRaWAN Path Loss Measurements in an Indoor Office Setting Including Impacts of Environmental Factors."</em>
+                            Gave a talk on <em>"LoRaWAN Path Loss Measurements in an Indoor Office Setting Including
+                                Impacts of Environmental Factors."</em>
                         </li>
                     </ul>
-                </p>
-                <p>
-                    <strong>October 2023:</strong> 
+                    </p>
+                    <p>
+                        <strong>October 2023:</strong>
                     <ul>
                         <li>
-                            Began research work with the <a href="https://ubi29.informatik.uni-siegen.de/usi/" target="_blank" rel="noopener noreferrer">Ubiquitous Computing Group</a>, 
-                            at the <a href="https://www.uni-siegen.de/start/" target="_blank" rel="noopener noreferrer">University of Siegen</a>.
+                            Began research work with the <a href="https://ubi29.informatik.uni-siegen.de/usi/"
+                                target="_blank" rel="noopener noreferrer">Ubiquitous Computing Group</a>,
+                            at the <a href="https://www.uni-siegen.de/start/" target="_blank"
+                                rel="noopener noreferrer">University of Siegen</a>.
                         </li>
-                    </ul>                    
-                </p>
-                <p>
-                    <strong>May 2023:</strong> 
+                    </ul>
+                    </p>
+                    <p>
+                        <strong>May 2023:</strong>
                     <ul>
                         <li>
-                            Moved from Kenya to Düsseldorf, Germany, and started pursuing a German language course at <a href="https://www.iik-duesseldorf.de/" target="_blank" rel="noopener noreferrer"> 
+                            Moved from Kenya to Düsseldorf, Germany, and started pursuing a German language course at <a
+                                href="https://www.iik-duesseldorf.de/" target="_blank" rel="noopener noreferrer">
                                 the Institute for International Communication</a>.
                         </li>
-                    </ul>                    
-                </p>
-                <p>
-                    <strong>April 2023:</strong> 
+                    </ul>
+                    </p>
+                    <p>
+                        <strong>April 2023:</strong>
                     <ul>
                         <li>
-                            Won the prestigious 
-                            <a href="https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/" target="_blank" rel="noopener noreferrer">
+                            Won the prestigious
+                            <a href="https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/"
+                                target="_blank" rel="noopener noreferrer">
                                 DAAD Ph.D Scholarship</a>.
                         </li>
-                    </ul>                    
-                </p>
-                <p>
-                    <strong>Feb 2022:</strong> 
+                    </ul>
+                    </p>
+                    <p>
+                        <strong>Feb 2022:</strong>
                     <ul>
                         <li style="margin-left: 30px;">
-                            Began teaching/lecturing courses in the <a href="https://eee.dkut.ac.ke/" target="_blank" rel="noopener noreferrer"> 
-                                Electrical and  Electronic Engineering department </a> of Dedan Kimathi University of Technology.
+                            Began teaching/lecturing courses in the <a href="https://eee.dkut.ac.ke/" target="_blank"
+                                rel="noopener noreferrer">
+                                Electrical and Electronic Engineering department </a> of Dedan Kimathi University of
+                            Technology.
                         </li>
-                    </ul>                    
-                </p>
-                <p>
-                    <strong>October 2021:</strong> 
+                    </ul>
+                    </p>
+                    <p>
+                        <strong>October 2021:</strong>
                     <ul>
                         <li style="margin-left: 30px;">
-                            Successfuly defended my Master of Science thesis : A Water Quality Monitoring system using Wireless Sensor Networks.
+                            Successfuly defended my Master of Science thesis : A Water Quality Monitoring system using
+                            Wireless Sensor Networks.
                         </li>
-                    </ul>                    
-                </p>
-                <p>
-                    <strong>May 2021:</strong> 
+                    </ul>
+                    </p>
+                    <p>
+                        <strong>May 2021:</strong>
                     <ul>
                         <li style="margin-left: 30px;">
                             Developed a Water Quality Monitoring system using Wireless Sensor Networks.
                         </li>
-                    </ul>                    
-                </p>
-            </section>
+                    </ul>
+                    </p>
+                </section>
 
-        </section>
-    </main>
+                <br>
+                <section id="research" class="">
+                    <!-- Research Section -->
+                    <section class="">
+                        <h2>Research</h2>
+                        <h3>Projects</h3>
+                        <!-- Each Project Section Styled Consistently -->
+                        <section class="">
+                            <div class="project-content">
+                                <img src="./assets/design.png" alt="Water Quality Monitoring System"
+                                    class="project-thumbnail">
+                                <div class="project-details">
+                                    <p><strong>LoRaWAN Path Loss Measurements in an Indoor Office Setting: Impacts of
+                                            Environmental Factors</strong></p>
+                                    <p><strong>Date:</strong> May 2024 - Ongoing</p>
+                                    <p><strong>Description:</strong> This ongoing research aims to measure and analyze
+                                        the behavior of LoRaWAN signals in indoor environments,
+                                        focusing on how various environmental factors affect signal propagation. The
+                                        study is conducted at the University of Siegen and involves
+                                        developing enhanced path loss models to account for different wall types and
+                                        environmental parameters such as temperature, humidity, pressure,
+                                        CO₂ concentration, particulate matter (PM2.5), signal-to-noise ratio (SNR), etc.
+                                    </p>
+                                    <p><a href="https://github.com/nahshonmokua/LoRaWAN-Indoor-Path-Loss-Modelling-with-MultiWall-Environment-Factors"
+                                            class="publication-link" title="GitHub" target="_blank"
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Code</a>
+                                        <a href="./files/ZESS_Poster-LoRaWAN.pdf" target="_blank"
+                                            rel="noopener noreferrer" class="publication-link">Poster</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="">
+                            <div class="project-content">
+                                <img src="./assets/wqm_project.png" alt="Water Quality Monitoring System"
+                                    class="project-thumbnail">
+                                <div class="project-details">
+                                    <p><strong>Water Quality Monitoring System using Wireless Sensor Networks</strong>
+                                    </p>
+                                    <p><strong>Date:</strong> March 2020 – October 2021</p>
+                                    <p><strong>Description:</strong> Developed a wireless sensor network to monitor
+                                        water quality parameters in real-time as part of my M.Sc project.</p>
+                                    <p>
+                                    <ul>
+                                        <li>Designed and deployed sensor nodes to measure pH, turbidity, and
+                                            temperature.</li>
+                                        <li>Implemented data collection and transmission protocols for real-time
+                                            monitoring.</li>
+                                        <li>Provided timely alerts for deviations from standard water quality levels.
+                                        </li>
+                                    </ul>
+                                    </p>
+                                    <p><a href="./files/MSc. Thesis Report-Nahshon.pdf" target="_blank"
+                                            rel="noopener noreferrer" class="publication-link">Thesis Report</a>
+                                        <a href="https://github.com/nahshonmokua/Water-Quality-Data-Turbidity-and-pH"
+                                            class="publication-link" title="GitHub" target="_blank"
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Code</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="">
+                            <div class="project-content">
+                                <img src="./assets/text_message_project.png"
+                                    alt="Electrical Devices Monitoring and Control System" class="project-thumbnail">
+                                <div class="project-details">
+                                    <p><strong>Text Message-Based Electrical Devices Monitoring and Control System Using
+                                            GSM Technology</strong></p>
+                                    <p><strong>Date:</strong> May 2016 – December 2016</p>
+                                    <p><strong>Description:</strong> Developed a remote monitoring and control system
+                                        for electrical devices using SMS commands via GSM technology during my
+                                        undergraduate studies.</p>
+                                    <p>
+                                    <ul>
+                                        <li>Integrated GSM modules with microcontrollers for seamless communication.
+                                        </li>
+                                        <li>Developed a user-friendly interface for sending SMS commands.</li>
+                                        <li>Enabled remote control of electrical devices to enhance convenience and
+                                            energy management.</li>
+                                    </ul>
+                                    </p>
+                                    <p><a href="./files/BSc. Project Report.pdf" target="_blank"
+                                            rel="noopener noreferrer" class="publication-link">Project Report</a></p>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="presentations" class="">
+                    <!-- Presentations Section -->
+                    <section class="">
+                        <h3>Presentations</h3>
+                        <div class="presentation-container">
+                            <section class="">
+                                <h3><a href="https://www.zess.uni-siegen.de/the-institute/" target="_blank"
+                                        rel="noopener noreferrer">ZESS PhD Forum </a></h3>
+                                <p><strong>Location:</strong>Siegen, Germany</p>
+                                <p style="text-align: left;"><strong>Date: 19/11/2024</strong></p>
+                                <ul>
+                                    <li>
+                                        <strong><a href="./files/ZESS_Poster-LoRaWAN.pdf" target="_blank"
+                                                rel="noopener noreferrer" class="publication-link">Poster</a>
+                                            :</strong> A Data Descriptor for LoRaWAN Path Loss Measurements in an Indoor
+                                        Office Setting: Impacts of Environmental Factors.
+                                    </li>
+                                </ul>
+                                <p style="text-align: left;"><strong>Date: 22/05/2024</strong></p>
+                                <ul>
+                                    <li>
+                                        <strong><a href="./files/LoRaWAN_HAR_Survey_Poster.pdf" target="_blank"
+                                                rel="noopener noreferrer" class="publication-link">Poster</a>
+                                            :</strong> LoRaWAN-integrated Wearable Sensor Networks for Remote Human
+                                        Activity Recognition: Applications, Challenges, and Possible Solutions: A
+                                        Review.
+                                    </li>
+                                    <li>
+                                        <strong><a
+                                                href="https://www.zess.uni-siegen.de/2024/05/full-house-at-zess-phd-research-forum-2024/"
+                                                target="_blank" rel="noopener noreferrer"
+                                                class="publication-link">Lightning Talk</a>:</strong> LoRaWAN Path Loss
+                                        Measurements in an Indoor Setting, including Human and Environmental Effects.
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section class="">
+                                <h3><a href="https://stieconference.dkut.ac.ke/5th-dekut-international-conference-on-science-technology-innovation-and-entrepreneurship/"
+                                        target="_blank" rel="noopener noreferrer"> 5th DeKUT STI&E Conference </a></h3>
+                                <p><strong>Location:</strong> Nyeri, Kenya</p>
+                                <p style="text-align: left"><strong>Date: 13/11/2019</strong></p>
+                                <ul>
+                                    <li>
+                                        <strong>Presentation:</strong> A Study on the Performance of LoRa in a Rural
+                                        Environment - Connectivity and Range Evaluation:
+                                        An abstract-reviewed presentation of a masters project research.
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </section>
+                </section>
+                    </section>
+                </section>
+
+                <br>
+                <section id="publications" class="">
+                    <!-- Publications Section -->
+                    <section class="">
+                        <h2>Publications</h2>
+
+                        <!-- Year 2025 Section -->
+
+                        <section class="year-publication ">
+                            <h3>2025</h3>
+                            <!-- Publication 1 -->
+                            <div class="publication-content">
+                                <div class="publication-details">
+                                    <p><strong>Nahshon M. Obiri</strong> and Kristof Van Laerhoven, "A Statistical Evaluation 
+                                        of Indoor Lorawan Environment-Aware Propagation for 6G: MLR, ANOVA, and Residual Distribution Analysis."
+                                        <em> in 2025 Joint European Conference on Networks and Communications & 6G Summit 
+                                            (EuCNC/6G Summit)</em>, pp. 494–499, June 2025.
+                                    </p>
+                                    <p>
+                                        <a href="https://doi.org/10.1109/EuCNC/6GSummit63408.2025.11037092" class="publication-link"
+                                            target="_blank" rel="noopener noreferrer">DOI</a>
+                                        <a href="https://doi.org/10.36227/techrxiv.174613334.47955790/v2"
+                                            class="publication-link" target="_blank" rel="noopener noreferrer">View on
+                                            TechRxiv</a>
+                                        <a href="https://doi.org/10.48550/arXiv.2504.16688" class="publication-link"
+                                            target="_blank" rel="noopener noreferrer">View on aRxiv</a>
+                                        <a href="https://github.com/nahshonmokua/LoRaWAN-IndoorPathLossModeling-ML/blob/main/MLR%20(ANOVA%20%26%20SHADOW%20ANALYSIS).ipynb"
+                                            class="publication-link" title="GitHub" target="_blank"
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Code</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Publication 2 -->
+                            <div class="publication-content">
+                                <div class="publication-details">
+                                    <p><strong>Nahshon M. Obiri</strong> and Kristof Van Laerhoven, "A Comprehensive
+                                        Data Description for LoRaWAN Path Loss Measurements in an Indoor Office Setting:
+                                        Effects of Environmental Factors."
+                                        <em> IEEE Access</em>, vol. 13, pp. 83148-83170, 2025.
+                                    </p>
+                                    <p>
+                                        <a href="https://doi.org/10.1109/ACCESS.2025.3569164" class="publication-link"
+                                            target="_blank" rel="noopener noreferrer">DOI</a>
+                                        <a href="https://doi.org/10.36227/techrxiv.174742042.26555770/v1"
+                                            class="publication-link" target="_blank" rel="noopener noreferrer">View on
+                                            TechRxiv</a>
+                                        <a href="https://doi.org/10.48550/arXiv.2505.06375" class="publication-link"
+                                            target="_blank" rel="noopener noreferrer">View on aRxiv</a>
+                                        <a href="./files/2024 May ZESS_Poster-LoRaWAN.pdf" target="_blank"
+                                            rel="noopener noreferrer" class="publication-link">Poster</a>
+                                        <a href="https://github.com/nahshonmokua/LoRaWAN-Indoor-PathLoss-Dataset-IEEEACCESS"
+                                            class="publication-link" title="GitHub" target="_blank"
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Code</a>
+                                        <a href="https://zenodo.org/records/15349731" class="publication-link"
+                                            target="_blank" rel="noopener noreferrer">Dataset</a>    
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Year 2024 Section -->
+
+                        <section class="year-publication ">
+                            <h3>2024</h3>
+                            <!-- Publication 1 -->
+                            <div class="publication-content">
+                                <div class="publication-details">
+                                    <p><strong>Nahshon M. Obiri</strong> and Kristof Van Laerhoven, "A Survey of
+                                        LoRaWAN-integrated Wearable Sensor Networks for Human Activity Recognition:
+                                        Applications, Challenges and Possible Solutions."
+                                        <em> IEEE Open Journal of the Communications Society</em>, vol. 5, pp.
+                                        6713-6735, 2024.
+                                    </p>
+                                    <p>
+                                        <a href="https://doi.org/10.1109/OJCOMS.2024.3484002" class="publication-link"
+                                            target="_blank" rel="noopener noreferrer">DOI</a>
+                                        <a href="https://doi.org/10.36227/techrxiv.172866076.64113449/v1"
+                                            class="publication-link" target="_blank" rel="noopener noreferrer">View on
+                                            TechRxiv</a>
+                                        <a href="./files/LoRaWAN_HAR_Survey_Poster.pdf" target="_blank"
+                                            rel="noopener noreferrer" class="publication-link">Poster</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Year 2023 Section -->
+                        <section class="year-publication ">
+                            <h3>2023</h3>
+                            <!-- Publication 1 -->
+                            <div class="publication-content">
+                                <div class="publication-details">
+                                    <p><strong>Nahshon M. Obiri</strong> and Humphry Shikunzi, "Long-Range Wide Area
+                                        Network (LoRa-WAN) Connectivity and Range Evaluation in a Rural Setting,"
+                                        <em>International Journal of Computer Applications</em>, vol. 185, no. 3, pp.
+                                        61-67, 2023.
+                                    </p>
+                                    <p>
+                                        <a href="https://www.ijcaonline.org/archives/volume185/number3/32689-2023922699"
+                                            class="publication-link" target="_blank" rel="noopener noreferrer">DOI</a>
+                                        <a href="https://www.ijcaonline.org/archives/volume185/number3/obiri-2023-ijca-922699.pdf"
+                                            class="publication-link" target="_blank" rel="noopener noreferrer">PDF</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Year 2021 Section -->
+                        <section class="year-publication ">
+                            <h3>2021</h3>
+                            <!-- Publication 1 -->
+                            <div class="publication-content">
+                                <div class="publication-details">
+                                    <p><strong>Nahshon M. Obiri</strong>, Ciira W. Maina, Henry K. Macharia, "Anomaly
+                                        Detection for Raw Water Quality – A Comparative Analysis of the Local Outlier
+                                        Factor Algorithm and the Random Forest Algorithms," <em>International Journal of
+                                            Computer Applications</em>, vol. 174, no. 26, pp. 47-54, 2021.</p>
+                                    <p>
+                                        <a href="https://www.ijcaonline.org/archives/volume174/number26/31842-2021921196"
+                                            class="publication-link" target="_blank" rel="noopener noreferrer">DOI</a>
+                                        <a href="https://www.ijcaonline.org/archives/volume174/number26/mokua-2021-ijca-921196.pdf"
+                                            class="publication-link" target="_blank" rel="noopener noreferrer">PDF</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Publication 2 -->
+                            <div class="publication-content">
+                                <div class="publication-details">
+                                    <p><strong>Nahshon M. Obiri</strong>, Ciira W. Maina, Henry K. Macharia, "A Raw
+                                        Water Quality Monitoring System using Wireless Sensor Networks,"
+                                        <em>International Journal of Computer Applications</em>, vol. 174, no. 21, pp.
+                                        35-42, 2021.
+                                    </p>
+                                    <p>
+                                        <a href="https://www.ijcaonline.org/archives/volume174/number21/31799-2021921113"
+                                            class="publication-link" target="_blank" rel="noopener noreferrer">DOI</a>
+                                        <a href="https://www.ijcaonline.org/archives/volume174/number21/mokua-2021-ijca-921113.pdf"
+                                            class="publication-link" target="_blank" rel="noopener noreferrer">PDF</a>
+                                        <a href="https://github.com/nahshonmokua/Water-Quality-Data-Turbidity-and-pH"
+                                            class="publication-link" title="GitHub" target="_blank"
+                                            rel="noopener noreferrer">
+                                            <i class="fab fa-github"></i> Code</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </section>
+                    </section>
+                </section>
+
+                <br>
+                <section id="teaching" class="">
+                    <!-- Teaching Experience Section -->
+                    <section class="">
+                        <h2>Teaching Experience</h2>
+
+                        <div class="teaching-container">
+
+                            <section class="teaching">
+                                <h3><span class="institution"><a href="https://www.uni-siegen.de/start/" target="_blank"
+                                            rel="noopener noreferrer">University of Siegen</a></span></h3>
+                                <h3>Course Taught:</h3>
+                                <div class="responsibilities">
+                                    <ul class="course-list">
+                                        <li>Seminar Data Science -- Machine Learning: Have a view <a
+                                                href="https://unisono.uni-siegen.de/qisserver/pages/startFlow.xhtml?_flowId=detailView-flow&_flowExecutionKey=e2s1"
+                                                target="_blank">here.</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section class="teaching">
+                                <h3><span class="institution"><a href="https://www.dkut.ac.ke" target="_blank">Dedan
+                                            Kimathi University of Technology</a></span></h3>
+                                <h3>Courses Taught:</h3>
+                                <div class="responsibilities">
+                                    <ul class="course-list">
+                                        <li>Circuit and Theory of Networks II & III</li>
+                                        <li>Microprocessors</li>
+                                        <li>Introduction to Engineering and Computing</li>
+                                        <li>Wireless Communication I</li>
+                                        <li>Control Engineering I</li>
+                                        <li>Signals and Communication II</li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section class="teaching">
+                                <h3><span class="institution"><a href="https://www.must.ac.ke/" target="_blank">Meru
+                                            University of Science and Technology</a></span></h3>
+                                <h3>Course Taught:</h3>
+                                <div class="responsibilities">
+                                    <ul class="course-list">
+                                        <li>Electrical Measurements and Instrumentation</li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section class="teaching">
+                                <h3><span class="institution"><a href="https://www.kyu.ac.ke/" target="_blank">Kirinyaga
+                                            University</a></span></h3>
+                                <h3>Courses Taught:</h3>
+                                <div class="responsibilities">
+                                    <ul class="course-list">
+                                        <li>Electromagnetics</li>
+                                        <li>Digital Electronics II</li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </section>
+                <br>
+                <section id="resume" class="">
+                    <!-- CV Content Section -->
+                    <section class="styled-section ">
+                        <h2>Curriculum Vitae</h2>
+                        <p>Please open/download an English version of my resume <a href="./files/cv_english.pdf"
+                                target="_blank" rel="noopener noreferrer">here</a>.</p>
+                        <p>Bitte öffnen oder laden Sie <a href="./files/cv_deutsche.pdf" target="_blank"
+                                rel="noopener noreferrer">hier</a> eine deutsche Version meines Lebenslaufs herunter.
+                        </p>
+                    </section>
+                </section>
+            </div>
+        </main>
+
+    </div>
 
     <!-- Footer Section -->
+
     <footer>
-    <div class="footer-content">
-        <p>FOLLOW: <a href="https://github.com/nahshonmokua" target="_blank" rel="noopener noreferrer" title="GitHub" class="footer-link"><i class="fab fa-github"></i> GitHub</a></p>
-        <p>&copy; 2025 Nahshon Obiri. All rights reserved.</p>
-    </div>
+        <div class="footer-content">
+            <p>FOLLOW: <a href="https://github.com/nahshonmokua" target="_blank" rel="noopener noreferrer"
+                    title="GitHub" class="footer-link"><i class="fab fa-github"></i> GitHub</a></p>
+            <p>&copy; 2025 Nahshon Obiri. All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- JavaScript File -->
     <script src="./script.js"></script>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <input type="text" id="search-input" placeholder="Search for content on the page...">
+            <div id="search-results"></div>
+        </div>
+    </div>
 </body>
 
 </html>

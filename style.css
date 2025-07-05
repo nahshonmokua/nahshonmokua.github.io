@@ -53,55 +53,49 @@
 /* Base Styles for Body */
 /* -------------------------------- */
 body {
-    font-family: 'Roboto', Arial, sans-serif; /* Roboto as the primary font, Arial as fallback */
-    line-height: 1.4; /* Reduced line spacing for better compactness */
-    color: var(--text-color); /* Base text color from variables */
-    background-color: var(--background-color); /* Background color from variables */
-    padding-top: 0; /* Will be set dynamically via JavaScript */
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.4;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s, color 0.3s;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-/* -------------------------------- */
-/* Header and Navigation Styles */
-/* -------------------------------- */
-header {
-    background-color: var(--header-background); /* Header background from variables */
-    padding: 15px 0; /* Reduced padding to decrease white space */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Fix the header to the top */
-    font-size: 1.2em; /* Slightly reduced font size */
+#main-header {
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
+    background-color: var(--header-background);
     z-index: 1000;
-    transition: background-color 0.3s;
+    padding: 10px 0; /* Removed horizontal padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav {
+.header-container {
     display: flex;
-    justify-content: center; /* Center the navigation links */
+    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px; /* Reduced padding */
+    padding: 0 20px; /* Re-apply horizontal padding here */
+    width: 100%;
 }
 
-nav ul {
-    list-style: none;
+.header-nav {
+    flex-grow: 1;
     display: flex;
-    flex-wrap: wrap;
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
-nav ul li {
-    margin: 0 10px; /* Reduced spacing between links */
+.nav-visible {
+    display: flex;
+    align-items: center;
 }
 
-nav ul li a {
+.header-nav a {
     text-decoration: none;
     color: var(--nav-link-color); /* Navigation link color from variables */
     font-weight: bold;
@@ -110,16 +104,49 @@ nav ul li a {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav ul li a:hover {
+.header-nav a:hover {
     background-color: var(--nav-link-hover-bg); /* Hover background from variables */
 }
 
-nav ul li a.active,
-nav ul li a.active:hover,
-nav ul li a.active:focus,
-nav ul li a.active:active {
+.header-nav a.active,
+.header-nav a.active:hover,
+.header-nav a.active:focus,
+.header-nav a.active:active {
     background-color: var(--nav-link-active-bg); /* Active link background from variables */
     color: var(--nav-link-active-color); /* Active link text color from variables */
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--header-text-color);
+    margin-left: 10px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: var(--section-background);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    flex-direction: column;
+}
+
+.dropdown-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--nav-link-hover-bg);
 }
 
 /* -------------------------------- */
@@ -143,6 +170,33 @@ nav ul li a.active:active {
 }
 
 /* -------------------------------- */
+/* Main Layout Styles               */
+/* -------------------------------- */
+#main-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1 0 auto;
+    gap: 20px; /* Add some space between sidebar and content */
+}
+
+#profile-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    background-color: var(--section-background);
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    border-right: 1px solid #ddd;
+    height: calc(100vh - 40px); /* Example height, assuming some padding on body/wrapper */
+    position: sticky;
+    top: 20px;
+}
+
+#main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+/* -------------------------------- */
 /* Section Container Style for Uniform Look */
 /* -------------------------------- */
 .section-container {
@@ -165,12 +219,10 @@ nav ul li a.active:active {
 /* Profile Container */
 /* -------------------------------- */
 .profile-container {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens to prevent overlap */
-    font-size: 0.9em; /* Slightly reduced font size */
+    display: block; /* Changed from flex to block */
+    font-size: 0.8em; /* Slightly reduced font size */
     margin-bottom: 20px; /* Reduced margin */
-    line-height: 1; /* Reduced line spacing for better compactness */
+    line-height: 1.2; /* Adjusted line spacing */
 }
 
 .profile-photo {
@@ -180,7 +232,6 @@ nav ul li a.active:active {
     object-fit: cover;
     margin-right: 30px; /* Reduced margin */
     margin-bottom: 15px; /* Reduced margin */
-    border: 4px solid #3498DB; /* Border for emphasis */
 }
 
 .profile-info {
@@ -198,28 +249,36 @@ nav ul li a.active:active {
 .profile-info p {
     margin-bottom: 4px; /* Reduced margin */
     color: var(--section-text-color); /* Section text color from variables */
-    font-size: 1em; /* Reduced font size */
+    font-size: 0.8em; /* Reduced font size */
 }
 
 /* -------------------------------- */
 /* Social Links Styling */
 /* -------------------------------- */
 .social-links {
-    margin-top: 15px; /* Reduced margin */
     display: flex;
-    flex-wrap: wrap; /* Prevents overflow by allowing links to wrap */
-    gap: 8px; /* Reduced gap */
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 15px;
 }
 
 .social-links a {
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
-    color: var(--link-color); /* Original link color from variables */
-    font-size: 0.9em; /* Reduced font size */
-    transition: color 0.3s ease;
+    color: var(--link-color);
+    font-size: 0.8em;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--link-hover-color); /* Hover color from variables */
+    color: var(--link-hover-color);
+    text-decoration: none;
+}
+
+.social-link-text {
+    display: none;
 }
 
 .social-links a.fixed-color {
@@ -246,7 +305,7 @@ nav ul li a.active:active {
 }
 
 .social-links a i {
-    font-size: 1.3em; /* Reduced icon size */
+    font-size: 1.2em; /* Reduced icon size */
     margin-right: 8px; /* Reduced space between icons */
     transition: transform 0.3s ease, color 0.3s;
 }
@@ -286,7 +345,7 @@ nav ul li a.active:active {
 }
 
 /* -------------------------------- */
-/* Projects, Presentations, and Teaching Sections */
+/* COMMON: Projects, Presentations, and Teaching Sections */
 /* -------------------------------- */
 .project-container,
 .presentation-container,
@@ -294,6 +353,10 @@ nav ul li a.active:active {
     display: flex;
     flex-direction: column; /* Stack items vertically to prevent overlap */
     gap: 15px; /* Reduced gap */
+}
+
+.project-container {
+
 }
 
 .project,
@@ -342,20 +405,40 @@ h1 {
 h2 {
     color: var(--header-text-color); /* Dynamic color based on theme */
     font-weight: 700;
-    font-size: 1.8em; /* Reduced font size */
+    font-size: 1.7em; /* Reduced font size */
 }
 
 h3 {
     font-weight: bold;
-    font-size: 1.3em; /* Reduced font size */
+    font-size: 1.4em; /* Reduced font size */
     color: #af1488;
 }
 
 p {
     margin-top: 0.8em; /* Reduced spacing between paragraphs */
     margin-bottom: 0.8em; /* Reduced spacing between paragraphs */
-    font-size: 1em; /* Reduced font size */
+    font-size: 0.9em; /* Reduced font size */
     color: var(--section-text-color); /* Section text color from variables */
+}
+
+/* Simple Global List Override */
+ul,
+ol {
+  color: #000000;
+  font-size: 0.9em;
+}
+
+/* Bullets stay indented */
+li {
+  margin-left: 30px;
+}
+
+/* Optional: ordered list tweaks */
+ol {
+  padding-left: 1.0em;
+}
+ol li::marker {
+  color: var(--accent-color);
 }
 
 /* -------------------------------- */
@@ -378,23 +461,32 @@ a:hover {
 /* -------------------------------- */
 /* Footer Styles */
 /* -------------------------------- */
-/* Footer styles remain exactly as they were */
 footer {
     background-color: var(--footer-background); /* Footer background from variables */
     color: var(--footer-text-color); /* Footer text color from variables */
-    text-align: center;
-    padding: 15px 0; /* Reduced padding */
-    margin-top: auto;
+    padding: 15px 0; /* Vertical padding */
     transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-content p {
     color: var(--footer-text-color); /* Ensure footer paragraphs use variable */
+    margin: 0; /* Reset margin for p inside footer */
 }
 
 .footer-link {
     color: #3498DB; /* Blue color for the GitHub link */
     text-decoration: none;
+    margin-right: 8px;
 }
 
 .footer-link:hover {
@@ -453,21 +545,62 @@ footer {
     }
 }
 
+@media (min-width: 768px) {
+    .social-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .social-links a {
+        font-size: 0.9em;
+        margin-bottom: 12px;
+    }
+
+    .social-link-text {
+        display: inline;
+        margin-left: 10px;
+    }
+
+    .social-links a:hover {
+        text-decoration: underline;
+    }
+}
+
 @media (max-width: 768px) {
+    .header-nav .nav-visible {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    #main-wrapper {
+        flex-direction: column;
+    }
+
+    #profile-sidebar {
+        width: 100%;
+        position: static; /* Reset sticky position */
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
     body {
-        padding-top: 100px; /* Reduced padding to accommodate header */
+        padding-top: 0;
     }
 
     nav {
         flex-direction: column; /* Stack navigation vertically */
     }
 
-    nav ul {
-        margin-top: 15px; /* Reduced margin */
+    .header-nav {
+        margin-top: 0; /* Reduced margin */
         justify-content: center; /* Center navigation items */
     }
 
-    nav ul li {
+    .header-nav a {
         margin: 0 8px 8px; /* Adjust margins for better spacing */
     }
 
@@ -477,17 +610,17 @@ footer {
     }
 
     .profile-info h1 {
-        font-size: 1.6em; /* Adjust heading size */
+        font-size: 1.7em; /* Adjust heading size */
     }
 
     h2 {
-        font-size: 1.5em; /* Adjust subheading size */
+        font-size: 1.4em; /* Adjust subheading size */
     }
 }
 
 @media (max-width: 480px) {
     body {
-        padding-top: 120px; /* Further reduced padding for very small screens */
+        padding-top: 0; /* Further reduced padding for very small screens */
     }
 
     .profile-photo {
@@ -504,27 +637,155 @@ footer {
     }
 
     .social-links a {
-        font-size: 0.8em; /* Reduce font size for social links */
+        font-size: 0.9em; /* Reduce font size for social links */
     }
 }
 
 .publication-link {
     display: inline-block;
-    padding: 3px 8px; /* Reduced padding */
-    margin: 4px; /* Reduced margin */
-    color: #fff; /* Text color */
-    background-color: #4CAF50; /* Background color */
+    padding: 3px 8px;
+    margin: 4px;
+    background-color: transparent; /* Make background transparent */
+    color: #586069; /* Dark gray for text/icon */
+    border: 1px solid hwb(0 0% 100%); /* Add a gray border */
     border-radius: 5px;
     text-decoration: none;
-    font-size: 13px; /* Reduced font size */
+    font-size: 10px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: color 0.3s, border-color 0.3s; /* Update transition */
 }
 
 .publication-link:hover {
-    background-color: #45a049; /* Darker shade for hover effect */
+    color: #1abc9c; /* Teal text/icon color on hover */
+    border-color: #1abc9c; /* Teal border color on hover */
+    background-color: transparent; /* Ensure background stays transparent */
 }
 
-li {
-    margin-left: 30px;
+
+
+.home-link {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--header-text-color);
+}
+
+.header-nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-nav a {
+    margin: 0 15px;
+    color: var(--nav-link-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-nav a:hover {
+    color: var(--link-hover-color);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right a {
+    margin-left: 20px;
+    font-size: 1.2em;
+    color: var(--nav-link-color);
+}
+
+.header-right a:hover {
+    color: var(--link-hover-color);
+}
+
+
+/* -------------------------------- */
+/* Search Modal Styles              */
+/* -------------------------------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+#search-results {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#search-results .result-item {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 991.98px) {
+    #main-wrapper {
+        flex-direction: column;
+    }
+
+    #profile-sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    #main-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+/* ─────────────────────────────────────────────────────
+   Section separators for all first-level <sections>s under #page-content
+   ───────────────────────────────────────────────────── */
+#page-content > section {
+  border-bottom: 3px solid var(--text-color);
+  padding-bottom: 10px;   /* space between content and line */
+  margin-bottom: 10px;    /* space after the line */
+}
+
+/* Remove the line under the very last section */
+#page-content > section:last-of-type {
+  border-bottom: none;
 }
