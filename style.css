@@ -178,6 +178,7 @@ body {
     margin: 0 auto;
     flex: 1 0 auto;
     gap: 20px; /* Add some space between sidebar and content */
+    min-height: 100vh; /* Ensures wrapper spans the full page height */
 }
 
 #profile-sidebar {
@@ -187,10 +188,11 @@ body {
     padding: 20px;
     overflow-y: auto; /* Allow scrolling if content overflows */
     border-right: 1px solid #ddd;
-    height: calc(100vh - 40px); /* Example height, assuming some padding on body/wrapper */
+    height: calc(100vh - 50px); /* Example height, assuming some padding on body/wrapper */
     position: sticky;
     top: 50px;
     align-self: flex-start; /* Ensures it sticks to the top of the content area */
+    margin-top: 0; /* Ensures no margin pushes it down */
 }
 
 #main-content {

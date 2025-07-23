@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.header-nav a');
     const themeToggleButton = document.getElementById('theme-toggle-icon');
-    const sectionIds = ['about-me', 'resume', 'research', 'publications', 'presentations', 'teaching', 'news'];
+    const sectionIds = ['about-me', 'research', 'publications', 'presentations', 'teaching', 'resume'];
     const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
     navLinks.forEach(link => {
