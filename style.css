@@ -28,6 +28,7 @@
     --accent-color: #3498DB; /* Example accent color */
     --link-color: green;
     --link-hover-color: #E74C3C;
+    --chip-text-color: #586069;   /* chip text in light */
 }
 
 [data-theme="dark"] {
@@ -47,6 +48,8 @@
     --accent-color: #66B2FF; /* Adjusted accent color for dark mode */
     --link-color: #1E90FF; /* Blue links for dark mode */
     --link-hover-color: #FF6347; /* Tomato color on hover */
+    --section-text-color: #fff;   /* paragraph/body text in dark */
+  --chip-text-color: #fff;      /* chip text in dark */
 }
 
 /* -------------------------------- */
@@ -427,7 +430,7 @@ p {
 /* Simple Global List Override */
 ul,
 ol {
-  color: #000000;
+  color: var(--section-text-color);  /* inherits white in dark */
   font-size: 0.9em;
 }
 
@@ -649,8 +652,9 @@ footer {
     padding: 3px 8px;
     margin: 4px;
     background-color: transparent; /* Make background transparent */
-    color: #586069; /* Dark gray for text/icon */
-    border: 1px solid hwb(0 0% 100%); /* Add a gray border */
+    color: var(--chip-text-color);          /* was #586069 */
+    border: 1px solid currentColor;         /* follows the text color */
+    border: 1px solid currentColor;
     border-radius: 5px;
     text-decoration: none;
     font-size: 10px;
