@@ -689,20 +689,31 @@ footer {
     color: var(--link-hover-color);
 }
 
+/* header icons: consistent spacing + styling */
 .header-right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 14px;                /* controls all the spacing */
 }
 
-.header-right a {
-    margin-left: 20px;
-    font-size: 1.2em;
-    color: var(--nav-link-color);
+.header-right a,
+.header-right button {
+  background: transparent;
+  border: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--nav-link-color);
+  padding: 0;
 }
 
-.header-right a:hover {
-    color: var(--link-hover-color);
+.header-right a:hover,
+.header-right button:hover {
+  color: var(--link-hover-color);
 }
+
+/* avoid legacy spacing */
+.header-right a { margin-left: 0; }
+
 
 
 /* -------------------------------- */
