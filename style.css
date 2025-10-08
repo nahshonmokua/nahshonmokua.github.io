@@ -525,7 +525,7 @@ footer {
 /* -------------------------------- */
 #about-compact.about-2col {
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(300px, 1fr);
+  grid-template-columns: minmax(220px, 1fr) minmax(280px, 1fr);
   gap: 16px 40px;
   align-items: start;
   margin: 10px 0 6px;
@@ -567,6 +567,6 @@ footer {
 #about-compact .edu-title { display: block; font-weight: 700; color: var(--section-text-color); }
 #about-compact .edu-sub   { display: block; font-size: 0.9em; opacity: 0.85; color: var(--section-text-color); }
 
-@media (max-width: 768px) {
+@media (max-width: 540px) {
   #about-compact.about-2col { grid-template-columns: 1fr; }
 }
