@@ -192,10 +192,10 @@ body {
 #profile-sidebar {
   width: 300px;
   flex-shrink: 0;
-  background-color: var(--section-background);
+  background-color: var(--background-color);
   padding: 20px;
   overflow-y: auto;
-  border-right: 1px solid #ddd;
+  border-right: none;
   height: calc(100vh - 50px);
   position: sticky;
   top: 50px;
@@ -425,7 +425,7 @@ footer {
   .header-nav .nav-visible { display: none; }
   .hamburger-menu { display: block; }
   #main-wrapper { flex-direction: column; }
-  #profile-sidebar { width: 100%; position: static; height: auto; border-right: none; border-bottom: 1px solid #ddd; }
+  #profile-sidebar { width: 100%; position: static; height: auto; border-right: none; border-bottom: none; }
   body { padding-top: 0; }
   nav { flex-direction: column; }
   .header-nav { margin-top: 0; justify-content: center; }
