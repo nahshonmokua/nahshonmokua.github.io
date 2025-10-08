@@ -1,5 +1,5 @@
 /* -------------------------------- */
-/* Styles */
+/* Styles                           */
 /* -------------------------------- */
 * {
   margin: 0;
@@ -9,7 +9,7 @@
 }
 
 /* -------------------------------- */
-/* Theme variables */
+/* Theme variables                  */
 /* -------------------------------- */
 :root {
   /* light */
@@ -29,6 +29,10 @@
   --link-color: green;
   --link-hover-color: #E74C3C;
   --chip-text-color: #586069;
+
+  /* my layout constants */
+  --sidebar-w: 300px;      /* one source of truth for sidebar width */
+  --header-h: 50px;        /* sticky offset equals header height */
 }
 
 [data-theme="dark"] {
@@ -42,17 +46,17 @@
   --nav-link-active-bg: #FF8C00;
   --nav-link-active-color: #fff;
   --section-background: #3a3a3a;
-  --section-text-color: #fff;   /* body/section text in dark */
+  --section-text-color: #fff;     /* body/section text in dark */
   --footer-background: #1f1f1f;
   --footer-text-color: #e0e0e0;
   --accent-color: #66B2FF;
   --link-color: #1E90FF;
   --link-hover-color: #FF6347;
-  --chip-text-color: #fff;      /* chip text in dark */
+  --chip-text-color: #fff;        /* chip text in dark */
 }
 
 /* -------------------------------- */
-/* Base */
+/* Base                              */
 /* -------------------------------- */
 body {
   font-family: 'Roboto', Arial, sans-serif;
@@ -66,7 +70,7 @@ body {
 }
 
 /* -------------------------------- */
-/* Header */
+/* Header                            */
 /* -------------------------------- */
 #main-header {
   position: sticky;
@@ -178,7 +182,7 @@ body {
 .header-right a { margin-left: 0; }
 
 /* -------------------------------- */
-/* Layout */
+/* Layout                            */
 /* -------------------------------- */
 #main-wrapper {
   display: flex;
@@ -187,20 +191,42 @@ body {
   flex: 1 0 auto;
   gap: 20px;
   min-height: 100vh;
+  position: relative;                /* anchor for the full-height divider */
+}
+
+/* full-height green divider only on wide screens */
+@media (min-width: 992px) {
+  #main-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;                       /* stretch to full page height */
+    left: var(--sidebar-w);
+    width: 1px;
+    background: #3a863e;
+    pointer-events: none;
+  }
 }
 
 #profile-sidebar {
-  width: 300px;
+  width: var(--sidebar-w);
   flex-shrink: 0;
   background-color: var(--background-color);
   padding: 20px;
-  overflow: visible;
-  border-right: 1px solid #3a863e;
-  height: calc(100vh - 50px);
+
+  /* stop inner scrolling — let the page scroll as one */
+  overflow: visible;                 /* no internal scroll */
+  height: auto;                      /* no fixed viewport height */
+
+  /* keep it pinned under the header as the page scrolls */
   position: sticky;
-  top: 50px;
+  top: var(--header-h);
+
   align-self: flex-start;
   margin-top: 0;
+
+  /* no border here on desktop because the full-height divider draws it */
+  border-right: none;
 }
 
 #main-content { flex-grow: 1; padding: 20px; }
@@ -219,7 +245,7 @@ body {
 .section-container:hover { box-shadow: 0 8px 8px rgba(44,62,80,0.15); }
 
 /* -------------------------------- */
-/* Profile */
+/* Profile                           */
 /* -------------------------------- */
 .profile-container {
   display: block;
@@ -253,7 +279,7 @@ body {
 }
 
 /* -------------------------------- */
-/* Social links */
+/* Social links                      */
 /* -------------------------------- */
 .social-links {
   display: flex;
@@ -333,7 +359,7 @@ body {
 }
 
 /* -------------------------------- */
-/* Typography */
+/* Typography                        */
 /* -------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', Arial, sans-serif;
@@ -360,7 +386,7 @@ ol { padding-left: 1.0em; }
 ol li::marker { color: var(--accent-color); }
 
 /* -------------------------------- */
-/* Links */
+/* Links                             */
 /* -------------------------------- */
 a {
   color: var(--link-color);
@@ -371,7 +397,7 @@ a {
 a:hover { text-decoration: underline; color: var(--link-hover-color); }
 
 /* -------------------------------- */
-/* Footer */
+/* Footer                            */
 /* -------------------------------- */
 footer {
   background-color: var(--footer-background);
@@ -405,7 +431,7 @@ footer {
 .github-fixed-color:hover i.fa-github { transform: scale(1.1); }
 
 /* -------------------------------- */
-/* Responsive */
+/* Responsive                        */
 /* -------------------------------- */
 @media (max-width: 1024px) {
   .profile-container { flex-direction: column; align-items: center; }
@@ -421,11 +447,18 @@ footer {
   .social-links a:hover { text-decoration: underline; }
 }
 
-@media (max-width: 768px) {
-  .header-nav .nav-visible { display: none; }
-  .hamburger-menu { display: block; }
+/* tablet & down: stack the layout, kill the full-height divider,
+   and use a short border under the sidebar instead */
+@media (max-width: 991.98px) {
   #main-wrapper { flex-direction: column; }
-  #profile-sidebar { width: 100%; position: static; height: auto; border-right: none; border-bottom: 1px solid #3a863e; }
+  #main-wrapper::before { display: none; }           /* hide the green rule on one-column */
+  #profile-sidebar {
+    width: 100%;
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #3a863e;               /* small separator for stacked layout */
+  }
   body { padding-top: 0; }
   nav { flex-direction: column; }
   .header-nav { margin-top: 0; justify-content: center; }
@@ -444,7 +477,7 @@ footer {
 }
 
 /* -------------------------------- */
-/* Publication chips */
+/* Publication chips                 */
 /* -------------------------------- */
 .publication-link {
   display: inline-block;
@@ -466,7 +499,7 @@ footer {
 }
 
 /* -------------------------------- */
-/* Header - misc */
+/* Header - misc                     */
 /* -------------------------------- */
 .home-link { font-weight: bold; font-size: 1.2em; color: var(--header-text-color); }
 .header-nav { flex-grow: 1; text-align: center; }
@@ -474,7 +507,7 @@ footer {
 .header-nav a:hover { color: var(--link-hover-color); }
 
 /* -------------------------------- */
-/* Search modal */
+/* Search modal                      */
 /* -------------------------------- */
 .modal {
   display: none;
@@ -504,14 +537,8 @@ footer {
 #search-results { max-height: 300px; overflow-y: auto; }
 #search-results .result-item { padding: 8px; border-bottom: 1px solid #eee; }
 
-@media (max-width: 991.98px) {
-  #main-wrapper { flex-direction: column; }
-  #profile-sidebar { width: 100%; position: static; }
-  #main-header { position: sticky; top: 0; z-index: 1000; }
-}
-
 /* -------------------------------- */
-/* Section separators */
+/* Section separators                */
 /* -------------------------------- */
 #page-content > section {
   border-bottom: 3px solid var(--text-color);
@@ -521,7 +548,7 @@ footer {
 #page-content > section:last-of-type { border-bottom: none; }
 
 /* -------------------------------- */
-/* About Me: two-column block */
+/* About Me: two-column block        */
 /* -------------------------------- */
 #about-compact.about-2col {
   display: grid;
