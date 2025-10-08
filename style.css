@@ -194,9 +194,15 @@ body {
   flex-shrink: 0;
   background-color: var(--background-color);
   padding: 20px;
+<<<<<<< HEAD
   overflow: visible;
   border-right: 1px solid #3a863e;
   height: auto;
+=======
+  overflow-y: auto;
+  border-right: none;
+  height: calc(100vh - 50px);
+>>>>>>> parent of 8b2f2ab (Border line back)
   position: sticky;
   top: 50px;
   align-self: flex-start;
@@ -425,7 +431,7 @@ footer {
   .header-nav .nav-visible { display: none; }
   .hamburger-menu { display: block; }
   #main-wrapper { flex-direction: column; }
-  #profile-sidebar { width: 100%; position: static; height: auto; border-right: none; border-bottom: 1px solid #3a863e; }
+  #profile-sidebar { width: 100%; position: static; height: auto; border-right: none; border-bottom: none; }
   body { padding-top: 0; }
   nav { flex-direction: column; }
   .header-nav { margin-top: 0; justify-content: center; }
