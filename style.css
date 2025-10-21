@@ -223,7 +223,10 @@ body {
   margin: 0 auto 15px;
 }
 #profile-sidebar .profile-info { text-align: center; }
-#profile-sidebar .social-links { justify-content: center; }
+#profile-sidebar .social-links { 
+  justify-content: center;
+  --icon-size: 22px; 
+}
 
 #main-content { flex-grow: 1; padding: 20px; }
 
