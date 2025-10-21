@@ -213,20 +213,14 @@ body {
   flex-shrink: 0;
   background-color: var(--background-color);
   padding: 20px;
-
-  /* stop inner scrolling — let the page scroll as one */
   overflow: visible;                 /* no internal scroll */
   height: auto;                      /* no fixed viewport height */
-
-  /* keep it pinned under the header as the page scrolls */
-  position: sticky;
+  position: sticky;                /* stick to top on scroll */  
   top: var(--header-h);
-
   align-self: flex-start;
   margin-top: 0;
-
-  /* no border here on desktop because the full-height divider draws it */
-  border-right: none;
+  border-right: none;                  /* no border by default */
+  text-align: center; 
 }
 
 #main-content { flex-grow: 1; padding: 20px; }
@@ -440,15 +434,15 @@ footer {
   .social-links { justify-content: center; }
 }
 
+/*  tablet rule */
 @media (min-width: 768px) {
-  .social-links { flex-direction: column; align-items: flex-start; }
-  .social-links a { font-size: 0.9em; margin-bottom: 12px; }
-  .social-link-text { display: inline; margin-left: 10px; }
-  .social-links a:hover { text-decoration: underline; }
+  .social-links.stacked { flex-direction: column; align-items: flex-start; }
+  .social-links.stacked a { font-size: 0.9em; margin-bottom: 12px; }
+  .social-links.stacked .social-link-text { display: inline; margin-left: 10px; }
 }
 
 /* tablet & down: stack the layout, kill the full-height divider,
-   and use a short border under the sidebar instead */
+   and short border under the sidebar*/
 @media (max-width: 991.98px) {
   #main-wrapper { flex-direction: column; }
   #main-wrapper::before { display: none; }           /* hide the green rule on one-column */
@@ -597,3 +591,60 @@ footer {
 @media (max-width: 540px) {
   #about-compact.about-2col { grid-template-columns: 1fr; }
 }
+
+/* Force icon-only row across all view modes, including tablet */
+.social-links.social-row {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+.social-links.social-row a {
+  font-size: 18px !important;      /* icon size */
+  margin: 0 !important;
+}
+
+.social-links.social-row .social-link-text { 
+  display: none !important;         /* no visible labels */
+}
+
+.social-links.social-row a i {
+  margin-right: 0 !important;       /* no spacing reserved for text */
+  transition: transform .2s ease, color .2s ease;
+}
+.social-links.social-row a:hover i {
+  transform: translateY(-1px) scale(1.08);
+}
+
+/* === Sidebar centering overrides (place last) === */
+#profile-sidebar {
+  text-align: center;                 /* center text inside the column */
+}
+
+#profile-sidebar .profile-container {
+  display: flex;                      /* switch from block to flex */
+  flex-direction: column;
+  align-items: center;                /* center the whole stack */
+}
+
+#profile-sidebar .profile-photo {
+  display: block;
+  margin: 0 auto 15px;                /* center avatar */
+}
+
+#profile-sidebar .profile-info {
+  text-align: center;                 /* name, role, org lines */
+}
+
+/* center the icon row in the sidebar on all viewports */
+#profile-sidebar .social-links { 
+  justify-content: center;
+}
+
+/* if you use the row variant, center it only in the sidebar */
+#profile-sidebar .social-links.social-row {
+  justify-content: center;            /* overrides the flex-start rule */
+}
+
+/* End of style.css */
