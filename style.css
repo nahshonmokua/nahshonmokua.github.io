@@ -68,12 +68,12 @@ body {
 /* Anchor jumps to stop below the sticky header */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 1px);
+  scroll-padding-top: calc(var(--header-h) - 5px);
 }
 
 /* Any target with an id gets the same offset */
 [id] {
-  scroll-margin-top: calc(var(--header-h) + 1px);
+  scroll-margin-top: calc(var(--header-h) - 5px);
 }
 
 
