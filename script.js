@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initSite() {
     const navLinks = document.querySelectorAll('.header-nav a');
     const themeToggleButton = document.getElementById('theme-toggle-icon');
     const sectionIds = ['about-me', 'research', 'publications', 'presentations', 'teaching', 'resume'];
@@ -197,4 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', adjustNav);
     adjustNav();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSite);
+} else {
+    initSite();
+}
