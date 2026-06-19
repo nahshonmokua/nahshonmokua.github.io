@@ -470,10 +470,8 @@ small {
 }
 
 .info-panel,
-.publication-entry,
-.project-card,
+  .project-card,
 .presentation-item,
-.teaching-card,
 .cv-panel {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -599,10 +597,20 @@ small {
 }
 
 .project-card {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 176px minmax(0, 1fr);
   gap: 20px;
-  padding: 18px;
+  padding: 18px 18px 18px 24px;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--accent), var(--warm));
 }
 
 .project-media {
@@ -671,19 +679,34 @@ small {
 
 .presentation-item {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 14px;
   padding: 18px;
+}
+
+.presentation-item > div:first-child {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
 }
 
 .presentation-events {
   display: grid;
-  gap: 16px;
+  gap: 0;
 }
 
 .presentation-events > div {
-  padding-left: 14px;
+  padding: 14px 0 14px 16px;
   border-left: 3px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.presentation-events > div:first-child {
+  padding-top: 0;
+}
+
+.presentation-events > div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .presentation-events time {
@@ -701,46 +724,47 @@ small {
 
 .publication-year {
   display: grid;
-  grid-template-columns: 88px minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: start;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.30) inset;
 }
 
 .publication-year > h3 {
-  position: sticky;
-  top: calc(var(--header-h) + 18px);
+  position: static;
+  margin-bottom: 16px;
   color: var(--warm);
   font-size: 1.45rem;
 }
 
 .publication-year > .publication-entry {
-  grid-column: 2;
+  grid-column: 1;
 }
 
 .publication-entry {
   position: relative;
   display: grid;
   gap: 12px;
-  padding: 18px 18px 18px 22px;
+  padding: 14px 0 14px 16px;
+  border-left: 3px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .publication-entry + .publication-entry {
-  margin-top: 14px;
+  margin-top: 0;
 }
 
-.publication-entry::before {
-  content: "";
-  position: absolute;
-  top: 18px;
-  bottom: 18px;
-  left: 0;
-  width: 4px;
-  background: var(--accent);
-  border-radius: 0 4px 4px 0;
+.publication-year > .publication-entry:first-of-type {
+  padding-top: 0;
 }
 
-.featured-publication::before {
-  background: var(--warm);
+.publication-year > .publication-entry:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .pub-type {
@@ -814,11 +838,21 @@ small {
 }
 
 .cv-panel {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 18px;
   align-items: center;
-  padding: 20px;
+  padding: 20px 20px 20px 26px;
+}
+
+.cv-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--accent), var(--warm));
 }
 
 .cv-panel p {
@@ -892,7 +926,11 @@ small {
 .teaching-card {
   position: relative;
   overflow: hidden;
-  padding: 18px;
+  padding: 18px 18px 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.30) inset;
 }
 
 .teaching-card::before {
@@ -901,6 +939,13 @@ small {
   inset: 0 auto 0 0;
   width: 4px;
   background: linear-gradient(180deg, var(--accent), var(--warm));
+  border-radius: var(--radius) 0 0 var(--radius);
+  pointer-events: none;
+}
+
+.teaching-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .teaching-card h3 {
@@ -909,8 +954,7 @@ small {
 
 .teaching-card p {
   margin-bottom: 10px;
-  color: var(--muted);
-  font-weight: 700;
+  color: var(--text);
 }
 
 /* -------------------------------- */
@@ -1109,22 +1153,7 @@ mark {
   .presentation-item {
     grid-template-columns: 1fr;
   }
-
-  .publication-year {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .publication-year > h3,
-  .publication-year > .publication-entry {
-    grid-column: 1;
-  }
-
-  .publication-year > h3 {
-    position: static;
-  }
-
-  .timeline::before {
+.timeline::before {
     left: 7px;
   }
 
@@ -1185,12 +1214,14 @@ mark {
   }
 
   .info-panel,
-  .publication-entry,
   .project-card,
   .presentation-item,
-  .teaching-card,
   .cv-panel {
     padding: 16px;
+  }
+
+  .teaching-card {
+    padding: 18px 18px 18px 22px;
   }
 
   .award-entry {
