@@ -20,4 +20,4 @@ async function loadIncludes(root = document) {
 
 await loadIncludes();
 
-await import('../script.js');
+await import('../site.js');

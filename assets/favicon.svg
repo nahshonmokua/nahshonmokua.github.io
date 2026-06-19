@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0f3d35"/>
+  <path d="M15 42c7-14 27-14 34 0" fill="none" stroke="#9fd5c4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M23 34c4-7 14-7 18 0" fill="none" stroke="#f0b46c" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="32" cy="43" r="4" fill="#ffffff"/>
+  <text x="32" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">NM</text>
+</svg>
