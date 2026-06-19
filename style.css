@@ -949,7 +949,14 @@ small {
 }
 
 .teaching-card h3 {
+  margin-bottom: 6px;
+}
+
+.teaching-year {
+  display: block;
   margin-bottom: 10px;
+  color: var(--warm);
+  font-weight: 700;
 }
 
 .teaching-card p {
