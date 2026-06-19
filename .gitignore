@@ -144,4 +144,10 @@ cython_debug/
 # OS files
 .DS_Store
 
+# Retired portfolio assets kept out of Git if Google Drive leaves local placeholders
+/script.js
+/assets/design.png
+/assets/nash.jpg
+/assets/text_message_project.png
+/assets/wqm_project.png
 
