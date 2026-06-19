@@ -613,7 +613,7 @@ small {
 }
 
 .project-media {
-  align-self: start;
+  align-self: center;
   overflow: hidden;
   background: var(--surface-muted);
   border: 1px solid var(--line);
@@ -1121,6 +1121,10 @@ mark {
   }
 .project-card {
     grid-template-columns: 1fr;
+  }
+
+  .project-media {
+    align-self: stretch;
   }
 
   .project-media img {
