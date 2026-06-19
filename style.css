@@ -470,9 +470,8 @@ small {
 }
 
 .info-panel,
-  .project-card,
-.presentation-item,
-.cv-panel {
+.project-card,
+.presentation-item {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -782,7 +781,7 @@ small {
 }
 
 /* -------------------------------- */
-/* Awards, teaching, CV and contact */
+/* Awards, teaching and contact */
 /* -------------------------------- */
 .award-list {
   display: grid;
@@ -835,29 +834,6 @@ small {
 .award-body p {
   color: var(--muted);
   font-weight: 700;
-}
-
-.cv-panel {
-  position: relative;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 18px;
-  align-items: center;
-  padding: 20px 20px 20px 26px;
-}
-
-.cv-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  background: linear-gradient(180deg, var(--accent), var(--warm));
-}
-
-.cv-panel p {
-  margin-top: 6px;
-  color: var(--muted);
 }
 
 .contact-section {
@@ -1143,13 +1119,7 @@ mark {
   .teaching-grid {
     grid-template-columns: 1fr;
   }
-
-  .cv-panel {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
-
-  .project-card {
+.project-card {
     grid-template-columns: 1fr;
   }
 
@@ -1222,8 +1192,7 @@ mark {
 
   .info-panel,
   .project-card,
-  .presentation-item,
-  .cv-panel {
+  .presentation-item {
     padding: 16px;
   }
 
