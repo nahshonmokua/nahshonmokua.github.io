@@ -20,4 +20,4 @@ async function loadIncludes(root = document) {
 
 await loadIncludes();
 
-await import('../site.js');
+await import('../site.js?v=20260619f');
