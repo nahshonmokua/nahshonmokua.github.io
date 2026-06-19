@@ -582,11 +582,6 @@ small {
   margin-bottom: 7px;
 }
 
-.highlight-event > div {
-  border-color: color-mix(in srgb, var(--warm) 70%, var(--line));
-  background: color-mix(in srgb, var(--surface) 82%, var(--warm-soft));
-}
-
 /* -------------------------------- */
 /* Research cards                   */
 /* -------------------------------- */
