@@ -338,29 +338,10 @@ small {
   border-radius: 8px;
   font-size: 0.82rem;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .profile-info p {
   margin: 0;
-}
-
-.profile-focus {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.profile-focus span {
-  display: inline-flex;
-  padding: 5px 8px;
-  color: var(--accent-strong);
-  background: var(--surface-muted);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-size: 0.78rem;
-  font-weight: 700;
 }
 
 .social-links {
